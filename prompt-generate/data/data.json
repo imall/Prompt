@@ -447,14 +447,14 @@
         "label": "16:9 橫幅",
         "tags": [],
         "variants": [],
-        "prompt": "# 16:9 橫幅母版\r\n\r\n橫幅電影感構圖框架。\r\n\r\n---\r\n\r\n【構圖與鏡頭 Camera / Composition】\r\n\r\n構圖比例：16:9 橫幅電影構圖。\r\n\r\n鏡頭語言：\r\n日系動畫電影構圖、電影感分鏡、自然生活感或戲劇性場景。\r\n\r\n通用設定：\r\n- 角色約佔畫面高度 55%–85%（依場景調整）\r\n- 保留背景空間感與景深\r\n- 不要過度廣角變形\r\n- 人物與背景必須像同一部高級日本動畫電影中的同一個鏡頭，不要像角色貼在背景上\r\n\r\n鏡頭要求：\r\n自然、電影感、柔和，不要低俗視角。\r\n\r\n---\r\n\r\n【尺寸 Size】\r\n\r\n16:9 cinematic composition.\r\n\r\nmasterpiece, best quality, ultra detailed, high quality Japanese anime movie style, cinematic lighting, film still quality."
+        "prompt": "# 16:9 橫幅母版\r\n\r\n橫幅電影感構圖框架。\r\n\r\n---\r\n16:9 橫幅電影構圖。\r\n\r\n8k RAW quality, ultra detailed, high-end Japanese anime illustration, premium Japanese lifestyle illustration, soft cinematic lighting, airy transparency, beautiful anime eye rendering, ultra detailed hair highlights."
       },
       {
         "id": "size-9x20",
         "label": "9:20 手機桌布",
         "tags": [],
         "variants": [],
-        "prompt": "# 9:20 手機桌布母版\r\n\r\n直式手機桌布構圖框架。\r\n\r\n---\r\n\r\n【構圖與鏡頭 Camera / Composition】\r\n\r\n構圖比例：9:20 直式手機桌布構圖。\r\n\r\n鏡頭語言：\r\n日系寫真感、動畫電影構圖、自然近距離生活感。\r\n\r\n可抽換鏡頭設定：\r\n- 膝蓋以上構圖\r\n- 半身近景\r\n- 從沙發側前方拍攝\r\n- 微微俯視角\r\n- 自然平視鏡頭\r\n- 稍微 zoom in\r\n- 角色位於畫面中央偏下\r\n- 臉部不要太貼近上緣\r\n- 保留適度背景空氣感\r\n- 不要過度廣角變形\r\n\r\n鏡頭要求：\r\n自然、親近、柔和，不要低俗視角，不要刻意強調身體部位。\r\n\r\n---\r\n\r\n【尺寸 Size】\r\n\r\n9:20 vertical composition.\r\n\r\n8k RAW quality, ultra detailed, high-end Japanese anime illustration, premium Japanese lifestyle illustration, soft cinematic lighting, airy transparency, beautiful anime eye rendering, ultra detailed hair highlights."
+        "prompt": "# 9:20 手機桌布母版\r\n\r\n直式手機桌布構圖框架。\r\n\r\n---\r\n\r\n【構圖與鏡頭 Camera / Composition】\r\n\r\n構圖比例：9:20 直式手機桌布構圖。\r\n\r\n8k RAW quality, ultra detailed, high-end Japanese anime illustration, premium Japanese lifestyle illustration, soft cinematic lighting, airy transparency, beautiful anime eye rendering, ultra detailed hair highlights."
       }
     ],
     "negative": [
