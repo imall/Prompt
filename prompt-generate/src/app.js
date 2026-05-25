@@ -80,8 +80,12 @@ async function init() {
 
   // ── Text helpers ──────────────────────────────────────────────────
   function cleanPositive(raw) {
-    return raw
-      .split('\n')
+    const lines = raw.split('\n');
+    // Skip everything before the first 【...】 section header (intro/note lines)
+    const firstSection = lines.findIndex(l => /^【/.test(l.trim()));
+    const relevant = firstSection >= 0 ? lines.slice(firstSection) : lines;
+
+    return relevant
       .filter(l => {
         const t = l.trim();
         return t && !t.startsWith('#') && t !== '---';
