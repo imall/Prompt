@@ -1,3 +1,10 @@
+---
+id: scene-muji-apartment
+category: scene
+label: MUJI日式公寓
+tags: [indoor, minimalist, morning, homey]
+---
+
 # MUJI 日式公寓
 
 極簡居家場景，適用黑長直學姐的居家系列。

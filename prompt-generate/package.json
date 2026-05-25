@@ -1,0 +1,11 @@
+{
+  "name": "prompt-generate",
+  "version": "0.1.0",
+  "description": "Modular AI image prompt generator",
+  "scripts": {
+    "build:data": "node scripts/build-data.js"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}

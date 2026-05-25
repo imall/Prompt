@@ -1,3 +1,10 @@
+---
+id: outfit-ck-homewear
+category: outfit
+label: CK居家內衣
+tags: [casual, homewear, cotton]
+---
+
 # CK 居家內衣
 
 Calvin Klein 風格居家棉質內衣套裝。
