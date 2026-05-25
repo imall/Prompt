@@ -75,6 +75,25 @@ async function init() {
       .trim();
   }
 
+  // ── Dirty tracking ────────────────────────────────────────────────
+  // When user manually edits a textarea, stop auto-overwriting it.
+  // Press ↺ to regenerate from selections.
+  const dirty = { pos: false, neg: false };
+
+  const posOut = document.getElementById('pos-out');
+  const negOut = document.getElementById('neg-out');
+
+  posOut.addEventListener('input', () => setDirty('pos', true));
+  negOut.addEventListener('input', () => setDirty('neg', true));
+
+  function setDirty(key, val) {
+    dirty[key] = val;
+    document.getElementById(`refresh-${key}`).classList.toggle('dirty', val);
+  }
+
+  document.getElementById('refresh-pos').addEventListener('click', () => { setDirty('pos', false); update(); });
+  document.getElementById('refresh-neg').addEventListener('click', () => { setDirty('neg', false); update(); });
+
   // ── Assemble & render ─────────────────────────────────────────────
   function update() {
     const posParts = [];
@@ -96,10 +115,18 @@ async function init() {
     const posText = posParts.join('\n\n');
     const negText = assembleNegative(negPrompts);
 
-    document.getElementById('pos-out').value = posText;
-    document.getElementById('neg-out').value = negText;
-    document.getElementById('pos-count').textContent = posText ? `${posText.length} 字元` : '';
-    document.getElementById('neg-count').textContent = negText ? `${negText.length} 字元` : '';
+    if (!dirty.pos) {
+      posOut.value = posText;
+      document.getElementById('pos-count').textContent = posText ? `${posText.length} 字元` : '';
+    } else {
+      document.getElementById('pos-count').textContent = posOut.value ? `${posOut.value.length} 字元` : '';
+    }
+    if (!dirty.neg) {
+      negOut.value = negText;
+      document.getElementById('neg-count').textContent = negText ? `${negText.length} 字元` : '';
+    } else {
+      document.getElementById('neg-count').textContent = negOut.value ? `${negOut.value.length} 字元` : '';
+    }
   }
 
   // ── Copy buttons ──────────────────────────────────────────────────
@@ -122,6 +149,8 @@ async function init() {
     sidebar.querySelectorAll('select').forEach(s => s.value = '');
     sidebar.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = false);
     for (const cat of categories) selections[cat.id] = cat.multi ? new Set() : '';
+    setDirty('pos', false);
+    setDirty('neg', false);
     update();
   });
 }

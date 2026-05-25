@@ -167,6 +167,20 @@
     .copy-btn:hover { background: var(--accent-h); }
     .copy-btn.copied { background: var(--green); }
 
+    .refresh-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--dim);
+      border-radius: var(--r);
+      padding: 4px 8px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .15s;
+      line-height: 1;
+    }
+    .refresh-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .refresh-btn.dirty { border-color: #f0a050; color: #f0a050; }
+
     textarea {
       flex: 1;
       background: var(--surface);
@@ -198,20 +212,22 @@
           <span class="out-title">Positive Prompt</span>
           <div class="out-meta">
             <span class="char-count" id="pos-count"></span>
+            <button class="refresh-btn" id="refresh-pos" title="重新從模組生成（覆蓋手動編輯）">↺</button>
             <button class="copy-btn" id="copy-pos">複製</button>
           </div>
         </div>
-        <textarea id="pos-out" readonly placeholder="在左側選擇模組後，Prompt 會在這裡組合顯示…"></textarea>
+        <textarea id="pos-out" placeholder="在左側選擇模組後，Prompt 會在這裡組合顯示…"></textarea>
       </div>
       <div class="out-section neg">
         <div class="out-header">
           <span class="out-title">Negative Prompt</span>
           <div class="out-meta">
             <span class="char-count" id="neg-count"></span>
+            <button class="refresh-btn" id="refresh-neg" title="重新從模組生成（覆蓋手動編輯）">↺</button>
             <button class="copy-btn" id="copy-neg">複製</button>
           </div>
         </div>
-        <textarea id="neg-out" readonly placeholder="在左側勾選負面 Prompt 模組後顯示…"></textarea>
+        <textarea id="neg-out" placeholder="在左側勾選負面 Prompt 模組後顯示…"></textarea>
       </div>
     </div>
   </main>
