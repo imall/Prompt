@@ -81,14 +81,15 @@ async function init() {
   // ── Text helpers ──────────────────────────────────────────────────
   function cleanPositive(raw) {
     const lines = raw.split('\n');
-    // Skip everything before the first 【...】 section header (intro/note lines)
+    // Skip intro/note lines before the first 【...】 section
     const firstSection = lines.findIndex(l => /^【/.test(l.trim()));
     const relevant = firstSection >= 0 ? lines.slice(firstSection) : lines;
 
     return relevant
       .filter(l => {
         const t = l.trim();
-        return t && !t.startsWith('#') && t !== '---';
+        // Strip headings, rulers, and 【...】 headers (category header replaces them)
+        return t && !t.startsWith('#') && t !== '---' && !/^【.*】/.test(t);
       })
       .join('\n')
       .replace(/\n{3,}/g, '\n\n')
@@ -134,27 +135,35 @@ async function init() {
       const sel = selections[cat.id];
 
       if (cat.id === 'negative') {
-        // Multi-select → negative output
         for (const id of sel) {
           const m = moduleMap[id];
           if (m) negPrompts.push(m.prompt);
         }
-      } else if (cat.multi) {
-        // Multi-select → positive output
+        continue;
+      }
+
+      // Collect content for this category
+      const parts = [];
+      if (cat.multi) {
         for (const id of sel) {
           const m = moduleMap[id];
-          if (m) posParts.push(cleanPositive(m.prompt));
+          if (m) parts.push(cleanPositive(m.prompt));
         }
       } else if (sel) {
-        // Single-select → positive output, with optional variant
         const m = moduleMap[sel];
         if (m) {
           const variantId = variantSelections[cat.id];
           const variant = m.variants?.find(v => v.id === variantId);
           let text = cleanPositive(m.prompt);
           if (variant?.prompt) text = variant.prompt + '\n\n' + text;
-          posParts.push(text);
+          parts.push(text);
         }
+      }
+
+      // Prefix with category header, group all parts under it
+      if (parts.length) {
+        const body = parts.join('\n\n');
+        posParts.push(cat.header ? `${cat.header}\n\n${body}` : body);
       }
     }
 

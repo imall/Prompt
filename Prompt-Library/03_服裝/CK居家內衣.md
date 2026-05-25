@@ -20,7 +20,7 @@ Calvin Klein 風格居家棉質內衣套裝。
 
 【服裝 Outfit】
 
-Minimalist luxury homeware style.
+Black Calvin Klein soft cotton underwear set. casual relaxed Japanese lifestyle styling.
 
 服裝重點：
 居家感、高級日系感、微慵懶、自然貼合成熟曲線，但不要低俗色情。

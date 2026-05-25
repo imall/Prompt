@@ -6,7 +6,10 @@
       "Bash(git commit -m 'feat: make output textareas editable with dirty tracking *)",
       "Bash(pnpm build *)",
       "Bash(git commit -m 'docs: rewrite README with module authoring guide *)",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(git commit -m 'feat: keep section headers in generated prompt output *)",
+      "Bash(git commit -m 'fix: skip intro description lines before first section header *)",
+      "Bash(git commit -m 'feat: auto-group modules under category section headers *)"
     ]
   }
 }
