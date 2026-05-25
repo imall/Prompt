@@ -7,8 +7,8 @@ async function init() {
   );
 
   const sidebar = document.getElementById('sidebar');
-  const selections = {};        // catId → '' | Set
-  const variantSelections = {}; // catId → variant id string
+  const selections = {};         // catId → '' | Set
+  const variantSelections = {};  // moduleId → variantId string
 
   // ── Render selectors ──────────────────────────────────────────────
   for (const cat of categories) {
@@ -21,34 +21,62 @@ async function init() {
 
     if (cat.multi) {
       selections[cat.id] = new Set();
+
       for (const item of items) {
+        variantSelections[item.id] = '';
+
+        const wrapper = document.createElement('div');
+
+        // Checkbox row
         const label = document.createElement('label');
         label.className = 'check-row';
         const cb = document.createElement('input');
         cb.type = 'checkbox';
+
+        // Variant placeholder (hidden until checkbox checked)
+        const varPh = document.createElement('div');
+        if (item.variants?.length) {
+          const varSel = document.createElement('select');
+          varSel.className = 'variant-sel';
+          varSel.innerHTML = `<option value="">— 版本/顏色 —</option>` +
+            item.variants.map(v => `<option value="${v.id}">${v.label}</option>`).join('');
+          varSel.addEventListener('change', () => {
+            variantSelections[item.id] = varSel.value;
+            update();
+          });
+          varPh.appendChild(varSel);
+          varPh.style.display = 'none';
+        }
+
         cb.addEventListener('change', () => {
           cb.checked ? selections[cat.id].add(item.id) : selections[cat.id].delete(item.id);
+          if (item.variants?.length) varPh.style.display = cb.checked ? '' : 'none';
+          if (!cb.checked) {
+            variantSelections[item.id] = '';
+            varPh.querySelector('select').value = '';
+          }
           update();
         });
+
         label.appendChild(cb);
         label.append(` ${item.label}`);
-        group.appendChild(label);
+        wrapper.appendChild(label);
+        wrapper.appendChild(varPh);
+        group.appendChild(wrapper);
       }
     } else {
       selections[cat.id] = '';
-      variantSelections[cat.id] = '';
 
       const sel = document.createElement('select');
       sel.innerHTML = `<option value="">— 不選 —</option>` +
         items.map(i => `<option value="${i.id}">${i.label}</option>`).join('');
 
-      // Placeholder div for variant sub-selector
       const varPh = document.createElement('div');
       varPh.id = `var-ph-${cat.id}`;
 
       sel.addEventListener('change', () => {
         selections[cat.id] = sel.value;
-        renderVariants(cat.id, sel.value, varPh);
+        renderVariantSel(sel.value, varPh);
         update();
       });
 
@@ -59,20 +87,20 @@ async function init() {
     sidebar.appendChild(group);
   }
 
-  // Render (or clear) variant sub-dropdown inside placeholder
-  function renderVariants(catId, moduleId, placeholder) {
+  // Render variant sub-dropdown for single-select categories
+  function renderVariantSel(moduleId, placeholder) {
     placeholder.innerHTML = '';
-    variantSelections[catId] = '';
     if (!moduleId) return;
     const m = moduleMap[moduleId];
     if (!m?.variants?.length) return;
 
+    variantSelections[moduleId] = '';
     const sel = document.createElement('select');
     sel.className = 'variant-sel';
     sel.innerHTML = `<option value="">— 版本/顏色 —</option>` +
       m.variants.map(v => `<option value="${v.id}">${v.label}</option>`).join('');
     sel.addEventListener('change', () => {
-      variantSelections[catId] = sel.value;
+      variantSelections[moduleId] = sel.value;
       update();
     });
     placeholder.appendChild(sel);
@@ -110,6 +138,12 @@ async function init() {
       .trim();
   }
 
+  function applyVariant(moduleId, baseText) {
+    const variantId = variantSelections[moduleId];
+    const variant = moduleMap[moduleId]?.variants?.find(v => v.id === variantId);
+    return variant?.prompt ? variant.prompt + '\n\n' + baseText : baseText;
+  }
+
   // ── Dirty tracking ────────────────────────────────────────────────
   const dirty = { pos: false, neg: false };
   const posOut = document.getElementById('pos-out');
@@ -142,25 +176,17 @@ async function init() {
         continue;
       }
 
-      // Collect content for this category
       const parts = [];
       if (cat.multi) {
         for (const id of sel) {
           const m = moduleMap[id];
-          if (m) parts.push(cleanPositive(m.prompt));
+          if (m) parts.push(applyVariant(id, cleanPositive(m.prompt)));
         }
       } else if (sel) {
         const m = moduleMap[sel];
-        if (m) {
-          const variantId = variantSelections[cat.id];
-          const variant = m.variants?.find(v => v.id === variantId);
-          let text = cleanPositive(m.prompt);
-          if (variant?.prompt) text = variant.prompt + '\n\n' + text;
-          parts.push(text);
-        }
+        if (m) parts.push(applyVariant(sel, cleanPositive(m.prompt)));
       }
 
-      // Prefix with category header, group all parts under it
       if (parts.length) {
         const body = parts.join('\n\n');
         posParts.push(cat.header ? `${cat.header}\n\n${body}` : body);
@@ -204,10 +230,12 @@ async function init() {
     sidebar.querySelectorAll('select').forEach(s => s.value = '');
     sidebar.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = false);
     sidebar.querySelectorAll('[id^="var-ph-"]').forEach(ph => { ph.innerHTML = ''; });
-    for (const cat of categories) {
-      selections[cat.id] = cat.multi ? new Set() : '';
-      variantSelections[cat.id] = '';
-    }
+    sidebar.querySelectorAll('.variant-sel').forEach(s => {
+      s.value = '';
+      s.closest('div')?.style.setProperty('display', 'none');
+    });
+    for (const cat of categories) selections[cat.id] = cat.multi ? new Set() : '';
+    Object.keys(variantSelections).forEach(k => { variantSelections[k] = ''; });
     setDirty('pos', false);
     setDirty('neg', false);
     update();
