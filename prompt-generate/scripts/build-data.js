@@ -11,7 +11,7 @@ function scanMdFiles(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      if (!entry.name.startsWith('08_')) results.push(...scanMdFiles(fullPath));
+      if (!entry.name.includes('成品Prompt')) results.push(...scanMdFiles(fullPath));
     } else if (entry.name.endsWith('.md')) {
       results.push(fullPath);
     }

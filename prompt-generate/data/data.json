@@ -61,22 +61,6 @@
     }
   ],
   "modules": {
-    "size": [
-      {
-        "id": "size-16x9",
-        "label": "16:9 橫幅",
-        "tags": [],
-        "variants": [],
-        "prompt": "# 16:9 橫幅母版\r\n\r\n橫幅電影感構圖框架。\r\n\r\n---\r\n\r\n【構圖與鏡頭 Camera / Composition】\r\n\r\n構圖比例：16:9 橫幅電影構圖。\r\n\r\n鏡頭語言：\r\n日系動畫電影構圖、電影感分鏡、自然生活感或戲劇性場景。\r\n\r\n通用設定：\r\n- 角色約佔畫面高度 55%–85%（依場景調整）\r\n- 保留背景空間感與景深\r\n- 不要過度廣角變形\r\n- 人物與背景必須像同一部高級日本動畫電影中的同一個鏡頭，不要像角色貼在背景上\r\n\r\n鏡頭要求：\r\n自然、電影感、柔和，不要低俗視角。\r\n\r\n---\r\n\r\n【尺寸 Size】\r\n\r\n16:9 cinematic composition.\r\n\r\nmasterpiece, best quality, ultra detailed, high quality Japanese anime movie style, cinematic lighting, film still quality."
-      },
-      {
-        "id": "size-9x20",
-        "label": "9:20 手機桌布",
-        "tags": [],
-        "variants": [],
-        "prompt": "# 9:20 手機桌布母版\r\n\r\n直式手機桌布構圖框架。\r\n\r\n---\r\n\r\n【構圖與鏡頭 Camera / Composition】\r\n\r\n構圖比例：9:20 直式手機桌布構圖。\r\n\r\n鏡頭語言：\r\n日系寫真感、動畫電影構圖、自然近距離生活感。\r\n\r\n可抽換鏡頭設定：\r\n- 膝蓋以上構圖\r\n- 半身近景\r\n- 從沙發側前方拍攝\r\n- 微微俯視角\r\n- 自然平視鏡頭\r\n- 稍微 zoom in\r\n- 角色位於畫面中央偏下\r\n- 臉部不要太貼近上緣\r\n- 保留適度背景空氣感\r\n- 不要過度廣角變形\r\n\r\n鏡頭要求：\r\n自然、親近、柔和，不要低俗視角，不要刻意強調身體部位。\r\n\r\n---\r\n\r\n【尺寸 Size】\r\n\r\n9:20 vertical composition.\r\n\r\n8k RAW quality, ultra detailed, high-end Japanese anime illustration, premium Japanese lifestyle illustration, soft cinematic lighting, airy transparency, beautiful anime eye rendering, ultra detailed hair highlights."
-      }
-    ],
     "template": [
       {
         "id": "template-japanese-romance",
@@ -455,6 +439,22 @@
         ],
         "variants": [],
         "prompt": "# 柔和晨光\r\n\r\n日系居家晨間光影，適用 MUJI 公寓場景。\r\n\r\n---\r\n\r\n【燈光 Lighting】\r\n\r\n柔和日系晨光。\r\n\r\n光源設定：\r\n明亮自然光穿過白色薄紗窗簾，形成柔和逆光與透明空氣感。\r\n\r\n光影需要包含：\r\n半透明空氣感、柔和逆光、細膩皮膚散射、柔光高光、透明感陰影、溫暖日系晨間氛圍。\r\n\r\n整體亮度：\r\n偏高明度、乾淨、夢幻、柔和、不刺眼。\r\n\r\n主要色彩：\r\n黑色、深棕黑色、白色、奶油色晨光、柔和木質色、淡粉色高光、透明高光。\r\n\r\nKeywords: soft morning light, airy transparency, backlighting through sheer curtains, warm Japanese morning atmosphere."
+      }
+    ],
+    "size": [
+      {
+        "id": "size-16x9",
+        "label": "16:9 橫幅",
+        "tags": [],
+        "variants": [],
+        "prompt": "# 16:9 橫幅母版\r\n\r\n橫幅電影感構圖框架。\r\n\r\n---\r\n\r\n【構圖與鏡頭 Camera / Composition】\r\n\r\n構圖比例：16:9 橫幅電影構圖。\r\n\r\n鏡頭語言：\r\n日系動畫電影構圖、電影感分鏡、自然生活感或戲劇性場景。\r\n\r\n通用設定：\r\n- 角色約佔畫面高度 55%–85%（依場景調整）\r\n- 保留背景空間感與景深\r\n- 不要過度廣角變形\r\n- 人物與背景必須像同一部高級日本動畫電影中的同一個鏡頭，不要像角色貼在背景上\r\n\r\n鏡頭要求：\r\n自然、電影感、柔和，不要低俗視角。\r\n\r\n---\r\n\r\n【尺寸 Size】\r\n\r\n16:9 cinematic composition.\r\n\r\nmasterpiece, best quality, ultra detailed, high quality Japanese anime movie style, cinematic lighting, film still quality."
+      },
+      {
+        "id": "size-9x20",
+        "label": "9:20 手機桌布",
+        "tags": [],
+        "variants": [],
+        "prompt": "# 9:20 手機桌布母版\r\n\r\n直式手機桌布構圖框架。\r\n\r\n---\r\n\r\n【構圖與鏡頭 Camera / Composition】\r\n\r\n構圖比例：9:20 直式手機桌布構圖。\r\n\r\n鏡頭語言：\r\n日系寫真感、動畫電影構圖、自然近距離生活感。\r\n\r\n可抽換鏡頭設定：\r\n- 膝蓋以上構圖\r\n- 半身近景\r\n- 從沙發側前方拍攝\r\n- 微微俯視角\r\n- 自然平視鏡頭\r\n- 稍微 zoom in\r\n- 角色位於畫面中央偏下\r\n- 臉部不要太貼近上緣\r\n- 保留適度背景空氣感\r\n- 不要過度廣角變形\r\n\r\n鏡頭要求：\r\n自然、親近、柔和，不要低俗視角，不要刻意強調身體部位。\r\n\r\n---\r\n\r\n【尺寸 Size】\r\n\r\n9:20 vertical composition.\r\n\r\n8k RAW quality, ultra detailed, high-end Japanese anime illustration, premium Japanese lifestyle illustration, soft cinematic lighting, airy transparency, beautiful anime eye rendering, ultra detailed hair highlights."
       }
     ],
     "negative": [
