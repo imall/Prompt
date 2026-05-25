@@ -11,7 +11,8 @@
       "Bash(git commit -m 'fix: skip intro description lines before first section header *)",
       "Bash(git commit -m 'feat: auto-group modules under category section headers *)",
       "Bash(git commit -m 'fix: show variant sub-selector for checkbox \\(multi-select\\) items *)",
-      "Bash(git commit -m 'feat: add more CK color variants \\(black/white/ivory/gray/light-gray/lilac/nude\\) *)"
+      "Bash(git commit -m 'feat: add more CK color variants \\(black/white/ivory/gray/light-gray/lilac/nude\\) *)",
+      "Bash(git commit -m 'feat: add root redirect to prompt-generate for GitHub Pages *)"
     ]
   }
 }
