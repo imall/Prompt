@@ -84,7 +84,7 @@ async function init() {
       .split('\n')
       .filter(l => {
         const t = l.trim();
-        return t && !t.startsWith('#') && t !== '---' && !/^【.*】/.test(t);
+        return t && !t.startsWith('#') && t !== '---';
       })
       .join('\n')
       .replace(/\n{3,}/g, '\n\n')
