@@ -33,6 +33,7 @@ function main() {
       id: data.id,
       label: data.label ?? data.id,
       tags: data.tags ?? [],
+      variants: data.variants ?? [],
       prompt: content.trim(),
     });
   }

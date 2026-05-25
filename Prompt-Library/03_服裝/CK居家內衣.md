@@ -3,6 +3,13 @@ id: outfit-ck-homewear
 category: outfit
 label: CK居家內衣
 tags: [casual, homewear, cotton]
+variants:
+  - id: ivory
+    label: 象牙白
+    prompt: "Ivory white soft cotton underwear set, casual relaxed Japanese lifestyle styling."
+  - id: lilac
+    label: 淡紫色
+    prompt: "Lilac Calvin Klein soft cotton underwear set, casual relaxed Japanese lifestyle styling."
 ---
 
 # CK 居家內衣
@@ -14,12 +21,6 @@ Calvin Klein 風格居家棉質內衣套裝。
 【服裝 Outfit】
 
 Minimalist luxury homeware style.
-
-版本 A（象牙白）：
-Ivory white soft cotton underwear set, casual relaxed Japanese lifestyle styling.
-
-版本 B（淡紫色）：
-Lilac Calvin Klein soft cotton underwear set, casual relaxed Japanese lifestyle styling.
 
 服裝重點：
 居家感、高級日系感、微慵懶、自然貼合成熟曲線，但不要低俗色情。

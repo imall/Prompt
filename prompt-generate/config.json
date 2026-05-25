@@ -4,7 +4,7 @@
     { "id": "character",       "label": "角色",        "multi": false },
     { "id": "character_hair",  "label": "髮型",        "multi": false },
     { "id": "character_body",  "label": "身材",        "multi": false },
-    { "id": "outfit",          "label": "服裝",        "multi": false },
+    { "id": "outfit",          "label": "服裝",        "multi": true  },
     { "id": "pose",            "label": "姿勢",        "multi": false },
     { "id": "scene",           "label": "場景",        "multi": false },
     { "id": "lighting",        "label": "光影畫風",    "multi": false },

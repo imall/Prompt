@@ -1,13 +1,14 @@
 async function init() {
   const { categories, modules } = await fetch('./data/data.json').then(r => r.json());
 
-  // Flat lookup map: id → module
+  // Flat lookup: id → module
   const moduleMap = Object.fromEntries(
     Object.values(modules).flat().map(m => [m.id, m])
   );
 
   const sidebar = document.getElementById('sidebar');
-  const selections = {}; // categoryId → '' | Set
+  const selections = {};        // catId → '' | Set
+  const variantSelections = {}; // catId → variant id string
 
   // ── Render selectors ──────────────────────────────────────────────
   for (const cat of categories) {
@@ -35,19 +36,49 @@ async function init() {
       }
     } else {
       selections[cat.id] = '';
+      variantSelections[cat.id] = '';
+
       const sel = document.createElement('select');
       sel.innerHTML = `<option value="">— 不選 —</option>` +
         items.map(i => `<option value="${i.id}">${i.label}</option>`).join('');
-      sel.addEventListener('change', () => { selections[cat.id] = sel.value; update(); });
+
+      // Placeholder div for variant sub-selector
+      const varPh = document.createElement('div');
+      varPh.id = `var-ph-${cat.id}`;
+
+      sel.addEventListener('change', () => {
+        selections[cat.id] = sel.value;
+        renderVariants(cat.id, sel.value, varPh);
+        update();
+      });
+
       group.appendChild(sel);
+      group.appendChild(varPh);
     }
 
     sidebar.appendChild(group);
   }
 
-  // ── Text helpers ──────────────────────────────────────────────────
+  // Render (or clear) variant sub-dropdown inside placeholder
+  function renderVariants(catId, moduleId, placeholder) {
+    placeholder.innerHTML = '';
+    variantSelections[catId] = '';
+    if (!moduleId) return;
+    const m = moduleMap[moduleId];
+    if (!m?.variants?.length) return;
 
-  // Strip markdown headings, rulers, 【section】 headers from a prompt body
+    const sel = document.createElement('select');
+    sel.className = 'variant-sel';
+    sel.innerHTML = `<option value="">— 版本/顏色 —</option>` +
+      m.variants.map(v => `<option value="${v.id}">${v.label}</option>`).join('');
+    sel.addEventListener('change', () => {
+      variantSelections[catId] = sel.value;
+      update();
+    });
+    placeholder.appendChild(sel);
+  }
+
+  // ── Text helpers ──────────────────────────────────────────────────
   function cleanPositive(raw) {
     return raw
       .split('\n')
@@ -60,7 +91,6 @@ async function init() {
       .trim();
   }
 
-  // For negative modules: extract only keyword-list lines (mostly ASCII, comma-separated)
   function assembleNegative(prompts) {
     return prompts
       .flatMap(p => p.split('\n'))
@@ -76,10 +106,7 @@ async function init() {
   }
 
   // ── Dirty tracking ────────────────────────────────────────────────
-  // When user manually edits a textarea, stop auto-overwriting it.
-  // Press ↺ to regenerate from selections.
   const dirty = { pos: false, neg: false };
-
   const posOut = document.getElementById('pos-out');
   const negOut = document.getElementById('neg-out');
 
@@ -101,14 +128,29 @@ async function init() {
 
     for (const cat of categories) {
       const sel = selections[cat.id];
+
       if (cat.id === 'negative') {
+        // Multi-select → negative output
         for (const id of sel) {
           const m = moduleMap[id];
           if (m) negPrompts.push(m.prompt);
         }
-      } else if (!cat.multi && sel) {
+      } else if (cat.multi) {
+        // Multi-select → positive output
+        for (const id of sel) {
+          const m = moduleMap[id];
+          if (m) posParts.push(cleanPositive(m.prompt));
+        }
+      } else if (sel) {
+        // Single-select → positive output, with optional variant
         const m = moduleMap[sel];
-        if (m) posParts.push(cleanPositive(m.prompt));
+        if (m) {
+          const variantId = variantSelections[cat.id];
+          const variant = m.variants?.find(v => v.id === variantId);
+          let text = cleanPositive(m.prompt);
+          if (variant?.prompt) text = variant.prompt + '\n\n' + text;
+          posParts.push(text);
+        }
       }
     }
 
@@ -148,7 +190,11 @@ async function init() {
   document.getElementById('clear-btn').addEventListener('click', () => {
     sidebar.querySelectorAll('select').forEach(s => s.value = '');
     sidebar.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = false);
-    for (const cat of categories) selections[cat.id] = cat.multi ? new Set() : '';
+    sidebar.querySelectorAll('[id^="var-ph-"]').forEach(ph => { ph.innerHTML = ''; });
+    for (const cat of categories) {
+      selections[cat.id] = cat.multi ? new Set() : '';
+      variantSelections[cat.id] = '';
+    }
     setDirty('pos', false);
     setDirty('neg', false);
     update();

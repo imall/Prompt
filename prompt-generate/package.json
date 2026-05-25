@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Modular AI image prompt generator",
   "scripts": {
+    "build": "node scripts/build-data.js",
     "build:data": "node scripts/build-data.js",
     "start": "npx --yes serve . -p 3000"
   },
