@@ -56,7 +56,8 @@ Prompt 正文內容...
 
 | category | 說明 |
 |---|---|
-| `template` | 母版 |
+| `template` | 母版（畫風/品質基準） |
+| `size` | 尺寸（16:9 / 9:20） |
 | `character` | 角色基底 |
 | `character_hair` | 髮型 |
 | `character_body` | 身材 |

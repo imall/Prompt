@@ -1,6 +1,7 @@
 {
   "categories": [
     { "id": "template",        "label": "母版",        "multi": false },
+    { "id": "size",            "label": "尺寸",        "multi": false },
     { "id": "character",       "label": "角色",        "multi": false },
     { "id": "character_hair",  "label": "髮型",        "multi": false },
     { "id": "character_body",  "label": "身材",        "multi": false },

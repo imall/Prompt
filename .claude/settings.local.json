@@ -4,7 +4,9 @@
       "Bash(node -e ' *)",
       "Bash(git add *)",
       "Bash(git commit -m 'feat: make output textareas editable with dirty tracking *)",
-      "Bash(pnpm build *)"
+      "Bash(pnpm build *)",
+      "Bash(git commit -m 'docs: rewrite README with module authoring guide *)",
+      "Bash(node *)"
     ]
   }
 }
