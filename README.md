@@ -14,9 +14,13 @@ Prompt/
 │   ├── 04_姿勢/           # 動作與姿勢模組
 │   ├── 05_場景/           # 場景與環境模組
 │   ├── 06_光影畫風/       # 燈光、光影、畫風模組
-│   ├── 07_負面Prompt/     # 負面 Prompt 防崩壞模組
-│   └── 08_成品Prompt/     # 組裝後的完整可用 Prompt
-└── prompt-generate/       # 模組化 Prompt 產生器 Web App
+│   ├── 07_尺寸/           # 尺寸比例模組
+│   ├── 08_負面Prompt/     # 負面 Prompt 防崩壞模組
+│   └── 09_成品Prompt/     # 組裝後的完整可用 Prompt
+├── scripts/               # 建置腳本
+├── src/                   # 前端程式
+├── index.html             # Prompt 產生器 Web App
+└── package.json
 ```
 
 ---
@@ -35,7 +39,7 @@ Prompt/
 | 姿勢 | `Prompt-Library/04_姿勢/` |
 | 場景 | `Prompt-Library/05_場景/` |
 | 光影畫風 | `Prompt-Library/06_光影畫風/` |
-| 負面 Prompt | `Prompt-Library/07_負面Prompt/` |
+| 負面 Prompt | `Prompt-Library/08_負面Prompt/` |
 
 ### 2. 檔案格式
 
@@ -103,7 +107,6 @@ variants:
 編輯完 `.md` 後執行：
 
 ```bash
-cd prompt-generate
 pnpm build
 ```
 
@@ -114,7 +117,6 @@ pnpm build
 ## 啟動 App
 
 ```bash
-cd prompt-generate
 pnpm install     # 第一次需要
 pnpm build       # 重新產生 data.json
 pnpm start       # 開啟 http://localhost:3000

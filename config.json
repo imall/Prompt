@@ -1,0 +1,17 @@
+{
+  "categories": [
+    { "id": "template",          "label": "母版",        "multi": false, "header": "【整體核心要求 Core Requirement】" },
+    { "id": "character",         "label": "角色",        "multi": false, "header": "【人物設定 Character】" },
+    { "id": "character_hair",    "label": "髮型",        "multi": false, "header": "【髮型 Hair】" },
+    { "id": "character_body",    "label": "身材",        "multi": false, "header": "【身材比例 Body】" },
+    { "id": "character_negative","label": "角色負面",    "multi": false },
+    { "id": "outfit",            "label": "服裝",        "multi": true,  "header": "【服裝 Outfit】" },
+    { "id": "pose",              "label": "姿勢",        "multi": false, "header": "【動作 Pose】" },
+    { "id": "shot",              "label": "景別",        "multi": false, "header": "【景別 Shot】" },
+    { "id": "camera",            "label": "視角構圖",    "multi": false, "header": "【視角構圖 Camera】" },
+    { "id": "scene",             "label": "場景",        "multi": false, "header": "【場景 Environment】" },
+    { "id": "lighting",          "label": "光影畫風",    "multi": false, "header": "【燈光畫風 Lighting & Style】" },
+    { "id": "size",              "label": "尺寸",        "multi": false, "header": "【構圖尺寸 Size】" },
+    { "id": "negative",          "label": "負面 Prompt", "multi": true  }
+  ]
+}

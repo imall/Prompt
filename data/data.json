@@ -7,12 +7,6 @@
       "header": "【整體核心要求 Core Requirement】"
     },
     {
-      "id": "size",
-      "label": "尺寸",
-      "multi": false,
-      "header": "【構圖尺寸 Size】"
-    },
-    {
       "id": "character",
       "label": "角色",
       "multi": false,
@@ -31,6 +25,11 @@
       "header": "【身材比例 Body】"
     },
     {
+      "id": "character_negative",
+      "label": "角色負面",
+      "multi": false
+    },
+    {
       "id": "outfit",
       "label": "服裝",
       "multi": true,
@@ -43,6 +42,18 @@
       "header": "【動作 Pose】"
     },
     {
+      "id": "shot",
+      "label": "景別",
+      "multi": false,
+      "header": "【景別 Shot】"
+    },
+    {
+      "id": "camera",
+      "label": "視角構圖",
+      "multi": false,
+      "header": "【視角構圖 Camera】"
+    },
+    {
       "id": "scene",
       "label": "場景",
       "multi": false,
@@ -52,7 +63,13 @@
       "id": "lighting",
       "label": "光影畫風",
       "multi": false,
-      "header": "【燈光 Lighting】"
+      "header": "【燈光畫風 Lighting & Style】"
+    },
+    {
+      "id": "size",
+      "label": "尺寸",
+      "multi": false,
+      "header": "【構圖尺寸 Size】"
     },
     {
       "id": "negative",
@@ -67,7 +84,7 @@
         "label": "日系戀愛動畫通用",
         "tags": [],
         "variants": [],
-        "prompt": "# 日系戀愛動畫 通用母版\r\n\r\n適用所有角色與場景的畫風、品質、氛圍基準。\r\n組裝時放在最前面。\r\n\r\n---\r\n\r\n【整體核心要求 Core Requirement】\r\n\r\n請以我提供的參考圖角色作為唯一人物原型，完整保留角色辨識度、臉部特徵、眼睛特徵、髮型髮色、身材比例、氣質與原本的日系透明感畫風。\r\n\r\n整體風格為：\r\n高品質日本戀愛系動畫電影 × 日系寫真感 × 高級生活感插畫 × 高完成度二次元美少女插畫\r\n\r\n畫面需要具有：\r\n透明空氣感、柔和高光、細膩皮膚散射、乾淨光影、夢幻戀愛氛圍、高級日系美少女插畫質感。\r\n\r\n不可改變角色核心辨識度，不可將角色畫成不同人物。\r\n\r\n---\r\n\r\n【畫風 Style】\r\n\r\nHigh-quality Japanese anime film illustration style.\r\n\r\n日本動畫電影級畫風、高級戀愛輕小說封面感、高完成度二次元美少女插畫。\r\n\r\n融合風格：\r\n日本動畫電影、日系戀愛遊戲 CG、高級商業插畫、柔和寫真感、空氣感透明上色。\r\n\r\n重點表現：\r\n精緻髮絲高光描繪、漂亮玻璃感眼睛、柔和皮膚光影、乾淨日系透明感。\r\n\r\n不要：\r\n歐美風、厚塗油畫、3D CG、塑膠感、AI 崩壞感。\r\n\r\nStyle references:\r\nhigh-end Japanese anime illustration, Japanese romance visual novel CG, airy transparency, soft cinematic lighting, premium Japanese lifestyle illustration, romantic soft realism, beautiful anime eye rendering, ultra detailed hair highlights.\r\n\r\n---\r\n\r\n【整體色調 Color Palette】\r\n\r\n柔和、夢幻、乾淨、透明、戀愛感。\r\n\r\n---\r\n\r\n【氛圍 Mood】\r\n\r\n溫柔、親密、安靜、戀愛感、高級日系透明感。\r\n\r\n角色給人的感覺：安靜溫柔、成熟親近、帶一點害羞，但不是妖豔或刻意性感。\r\n\r\n---\r\n\r\n【品質 Quality】\r\n\r\n8k RAW quality, ultra detailed, high-end Japanese anime illustration, premium Japanese lifestyle illustration, soft cinematic lighting, airy transparency, beautiful anime eye rendering."
+        "prompt": "# 日系戀愛動畫 通用母版\r\n\r\n適用所有角色與場景的畫風、品質、氛圍基準。\r\n組裝時放在最前面。\r\n\r\n---\r\n\r\n【整體核心要求 Core Requirement】\r\n\r\n請以我提供的參考圖角色作為唯一人物原型，完整保留角色辨識度、臉部特徵、眼睛特徵、髮型髮色、身材比例、氣質與原本的日系透明感畫風。\r\n\r\n整體風格為：\r\nHigh-quality Japanese anime film illustration style.\r\n\r\n高品質日本戀愛系動畫電影 × 日系寫真感 × 高級生活感插畫 × 高完成度二次元美少女插畫\r\n\r\n日本動畫電影、日系戀愛遊戲 CG、高級商業插畫、柔和寫真感、空氣感透明上色。\r\n\r\n\r\n畫面需要具有：\r\n透明空氣感、柔和高光、細膩皮膚散射、乾淨光影、夢幻戀愛氛圍、高級日系美少女插畫質感。\r\n\r\n不可改變角色核心辨識度，不可將角色畫成不同人物。\r\n\r\n重點表現：\r\n精緻髮絲高光描繪、漂亮玻璃感眼睛、柔和皮膚光影、乾淨日系透明感。\r\n\r\nStyle references:\r\nhigh-end Japanese anime illustration, Japanese romance visual novel CG, airy transparency, soft cinematic lighting, premium Japanese lifestyle illustration, romantic soft realism, beautiful anime eye rendering, ultra detailed hair highlights."
       }
     ],
     "character": [
@@ -81,7 +98,7 @@
           "petite"
         ],
         "variants": [],
-        "prompt": "# 紫髮少女（費倫）\n\n---\n\n【人物身份 Character Profile】\n\n角色是一位成年女性外觀的日系戀愛系神秘少女。\n\n人物氣質：\n安靜、溫柔、神秘、清澈、帶有戀愛感與透明感，略帶呆萌，不妖豔。\n\n整體給人的印象是：\n安靜清澈的紫髮少女，嬌小但豐滿，神秘又親近，帶有戀愛動畫女主角的溫柔感。\n\n---\n\n【臉部與眼睛 Face & Eyes】\n\n臉型小巧圓潤，面容柔和可愛，白皙乾淨膚色。\n\n眼睛設定：\n紫色偏粉紫的玻璃感瞳孔，帶有藍紫漸層；大而圓潤，眼尾略微下垂，不上挑，不銳利；濕潤水光、多層高光、清澈透明感。\n\n眼神需要呈現：\n清澈、水潤、溫柔、害羞，帶有戀愛感。\n\n絕對不要：\n尖耳、狐狸眼、銳利眼神、成熟妖豔感、冷淡表情、空洞眼神。\n\n---\n\nStyle keywords: long straight purple hair, thick straight bangs, purple crystal eyes, petite but curvaceous, sweet romantic heroine."
+        "prompt": "# 紫髮少女（費倫）\r\n\r\n---\r\n\r\n【人物身份 Character Profile】\r\n\r\n角色是一位成年女性外觀的日系戀愛系神秘少女。\r\n\r\n人物氣質：\r\n安靜、溫柔、神秘、清澈、帶有戀愛感與透明感，略帶呆萌，不妖豔。\r\n\r\n整體給人的印象是：\r\n安靜清澈的紫髮少女，嬌小但豐滿，神秘又親近，帶有戀愛動畫女主角的溫柔感。\r\n\r\n---\r\n\r\n【臉部與眼睛 Face & Eyes】\r\n\r\n臉型小巧圓潤，面容柔和可愛，白皙乾淨膚色。\r\n\r\n眼睛設定：\r\n紫色偏粉紫的玻璃感瞳孔，帶有藍紫漸層；大而圓潤，眼尾略微下垂，不上挑，不銳利；濕潤水光、多層高光、清澈透明感。\r\n\r\n眼神需要呈現：\r\n清澈、水潤、溫柔、害羞，帶有戀愛感。\r\n\r\n---\r\n\r\nStyle keywords: long straight purple hair, thick straight bangs, purple crystal eyes, petite but curvaceous, sweet romantic heroine."
       },
       {
         "id": "character-senpai-base",
@@ -92,7 +109,31 @@
           "gentle"
         ],
         "variants": [],
-        "prompt": "# 黑長直學姐（詩羽）\n\n---\n\n【人物身份 Character Profile】\n\n角色是一位成年女性外觀的日系學姐型角色。\n\n人物氣質：\n溫柔、安靜、知性、成熟、親近感、微害羞、帶有戀愛感，但不妖豔、不刻意性感。\n\n整體給人的印象是：\n安靜溫柔的黑長直學姐，成熟但乾淨，親近但不低俗，像週末早晨與戀人獨處的自然日常感。\n\n---\n\n【臉部與眼睛 Face & Eyes】\n\n請完整保留參考圖人物的臉部辨識度。\n\n臉部特徵：\n柔和清秀的日系臉型、白皙乾淨肌膚、細緻自然睫毛、柔軟淡粉唇色、乾淨自然的臉部光影。\n\n眼睛設定：\n深酒紅寶石眼，帶紫紅玫瑰漸層與深色外圈，透明但沉穩，不要亮粉紅。\n\n眼神需要呈現：\n清澈、水潤、溫柔、親近、微微害羞，帶有日系學姐般成熟溫柔感。\n\n眼睛非常重要，請維持：\n紅棕色寶石般透明感瞳孔、柔和高光、清澈水潤眼神、安靜溫柔的戀愛感。\n\n絕對不要：\n紫色眼睛、藍色眼睛、狐狸眼、銳利成熟系眼神、歐美妝感、濃妝、妖豔感、空洞眼神、病嬌感。\n\n---\n\nStyle keywords: black long straight hair, white headband, gentle senpai heroine, ruby red eyes, mature graceful figure."
+        "prompt": "# 黑長直學姐（詩羽）\r\n\r\n---\r\n\r\n【人物身份 Character Profile】\r\n\r\n角色是一位成年女性外觀的日系學姐型角色。\r\n\r\n人物氣質：\r\n溫柔、安靜、知性、成熟、親近感、微害羞、帶有戀愛感，但不妖豔、不刻意性感。\r\n\r\n整體給人的印象是：\r\n安靜溫柔的黑長直學姐，成熟但乾淨，親近但不低俗，像週末早晨與戀人獨處的自然日常感。\r\n\r\n---\r\n\r\n【臉部與眼睛 Face & Eyes】\r\n\r\n請完整保留參考圖人物的臉部辨識度。\r\n\r\n臉部特徵：\r\n柔和清秀的日系臉型、白皙乾淨肌膚、細緻自然睫毛、柔軟淡粉唇色、乾淨自然的臉部光影。\r\n\r\n眼睛設定：\r\n深酒紅寶石眼，帶紫紅玫瑰漸層與深色外圈，透明但沉穩，不要亮粉紅。\r\n\r\n眼神需要呈現：\r\n清澈、水潤、溫柔、親近、微微害羞，帶有日系學姐般成熟溫柔感。\r\n\r\n眼睛非常重要，請維持：\r\n紅棕色寶石般透明感瞳孔、柔和高光、清澈水潤眼神、安靜溫柔的戀愛感。\r\n\r\n---\r\n\r\nStyle keywords: black long straight hair, white headband, gentle senpai heroine, ruby red eyes, mature graceful figure."
+      }
+    ],
+    "character_negative": [
+      {
+        "id": "character-purple-negative",
+        "label": "紫髮少女（費倫）負面 Prompt",
+        "tags": [
+          "purple",
+          "heroine",
+          "negative"
+        ],
+        "variants": [],
+        "prompt": "# 紫髮少女 — 角色專屬負面 Prompt\n\n角色辨識度防護、眼睛髮型身材防崩壞。\n疊加在通用防崩壞之上使用。\n\n---\n\n【眼睛防崩壞 Eyes】\n\nAvoid: blue eyes, green eyes, gold eyes, brown eyes, black eyes, fantasy eye color, heterochromia, glowing eyes, sharp eyes, fox eyes, slanted eyes, slit pupils, dead eyes, emotionless eyes, cold stare, seductive eyes.\n\n必須保留：紫色偏粉紫的玻璃感瞳孔、帶藍紫漸層、大而圓潤、眼尾略微下垂、濕潤水光。\n\n---\n\n【髮型防崩壞 Hair】\n\nAvoid: black hair, brown hair, blonde hair, silver hair, pink hair, red hair, short hair, twin tails, curly hair, wavy hair, colorful hair.\n\n必須保留：極長柔順紫色長髮、整齊厚瀏海（平切感）、藍紫漸層。\n\n---\n\n【臉部表情防崩壞 Face / Expression】\n\nAvoid: pointed ears, elf ears, long ears, sharp eyes, mature seductive expression, cold expression, emotionless face, ugly smile, fox-eye shape, masculine face.\n\n必須保留：小巧圓潤臉型、安靜清澈溫柔氣質、柔和可愛五官。\n\n---\n\n【身材防崩壞 Body】\n\nAvoid: flat chest, muscular body, masculine body, old woman appearance, overly mature body, masculine proportions, hard ball breasts, unrealistic breasts, bad breasts, exaggerated nipples.\n\n必須保留：嬌小纖細（148cm）、上身明顯豐滿但自然柔軟、可愛系女主角比例。\n\n---\n\n【氣質防護 Style】\n\nAvoid: mature seductive makeup, heavy makeup, western makeup style, vulgar expression, pornographic pose, dark fantasy style, horror style."
+      },
+      {
+        "id": "character-senpai-negative",
+        "label": "黑長直學姐（詩羽）負面 Prompt",
+        "tags": [
+          "senpai",
+          "mature",
+          "negative"
+        ],
+        "variants": [],
+        "prompt": "# 黑長直學姐 — 角色專屬負面 Prompt\n\n角色辨識度防護、眼睛髮型身材防崩壞。\n疊加在通用防崩壞之上使用。\n\n---\n\n【眼睛防崩壞 Eyes】\n\nAvoid: purple eyes, blue eyes, green eyes, gold eyes, silver eyes, fantasy eye color, heterochromia, glowing eyes, sharp eyes, fox eyes, slit pupils, dead eyes, emotionless eyes, asymmetrical eyes, seductive eyes, cold stare, harsh expression, bright pink eyes.\n\n必須保留：深酒紅寶石眼、帶紫紅玫瑰漸層與深色外圈、透明但沉穩、柔和高光、清澈水潤溫柔眼神。\n\n---\n\n【髮型防崩壞 Hair】\n\nAvoid: purple hair, colorful hair, blonde hair, silver hair, pink hair, red hair, short hair, twin tails, curly hair, wavy hair, bun hairstyle.\nAvoid: missing headband, oversized hair accessory, bow hair accessory, flower hair accessory, butterfly hair pin, excessive decoration.\n\n必須保留：極長黑色長直髮 ＋ 簡潔白色髮箍，這是角色最重要辨識度。\n\n---\n\n【臉部表情防崩壞 Face / Expression】\n\nAvoid: sharp eyes, fox eyes, seductive mature expression, western makeup feel, heavy makeup, cold expression, emotionless face, ugly smile, masculine face, sick yandere expression.\n\n必須保留：柔和清秀日系臉型、白皙乾淨肌膚、細緻自然睫毛、柔軟淡粉唇色、安靜溫柔學姐氣質。\n\n---\n\n【身材防崩壞 Body】\n\nAvoid: flat chest, muscular body, masculine body, old woman appearance, childlike body, overly petite body, hard ball breasts, unrealistic breasts, bad breasts, exaggerated nipples, plastic skin feel.\n\n必須保留：168cm 修長纖細、成熟豐滿上身但自然柔軟、真實受重力影響的成熟胸型。\n\n---\n\n【氣質防護 Style】\n\nAvoid: mature seductive makeup, vulgar expression, pornographic pose, dark fantasy style, horror style, excessively sexualized presentation."
       }
     ],
     "character_body": [
@@ -106,7 +147,7 @@
           "small-frame"
         ],
         "variants": [],
-        "prompt": "# 紫髮少女 — 身材\n\n---\n\n【身材比例 Body】\n\n身高約 148cm，嬌小纖細但上身明顯豐滿。\n\n三圍參考：B:91 / W:60 / H:88\n\n整體比例：\n肩膀窄、骨架小、腰很細、四肢纖細修長，胸部豐滿但自然柔軟，有布料支撐感與重量感。\n\n整體是戀愛動畫中可愛系女主角的柔和感，而不是成熟御姐感。\n臀部不可太寬，符合嬌小但上身豐滿的特色。\n\n皮膚質感：\n柔嫩、半透明感、自然血色、細膩高光、乾淨無髒感。\n\n整體必須自然，不要誇張色情化。"
+        "prompt": "# 紫髮少女 — 身材\r\n\r\n---\r\n\r\n【身材比例 Body】\r\n\r\n身高約 148cm，嬌小纖細但上身明顯豐滿。\r\n\r\n三圍參考：B:91 / W:60 / H:88\r\n\r\n整體比例：\r\n肩膀窄、骨架小、腰很細、四肢纖細修長，胸部豐滿但自然柔軟，有布料支撐感與重量感。\r\n\r\n整體是戀愛動畫中可愛系女主角的柔和感，而不是成熟御姐感。\r\n臀部不可太寬，符合嬌小但上身豐滿的特色。\r\n\r\n皮膚質感：\r\n柔嫩、半透明感、自然血色、細膩高光、乾淨無髒感。\r\n\r\n整體必須自然，不要誇張色情化。"
       },
       {
         "id": "character-senpai-body",
@@ -118,7 +159,7 @@
           "busty"
         ],
         "variants": [],
-        "prompt": "# 黑長直學姐 — 身材\n\n---\n\n【身材比例 Body】\n\n身高約 168cm，體重約 52kg，身形修長纖細，帶有成熟學姐感。\n\n三圍參考：B:89 / W:61 / H:88\n\n整體比例：\n修長纖細、肩線柔和、腰細、腿部線條修長漂亮、臀部自然圓潤，胸部豐滿成熟且具有自然重量感與柔軟支撐感。\n\n胸型表現：\n柔軟自然、圓潤飽滿、真實受重力影響的成熟胸型，不可做成硬球感或塑膠感。\n\n皮膚質感：\n柔嫩、半透明感、自然血色、細膩高光、乾淨無髒感。\n\n整體必須自然，不要誇張色情化。"
+        "prompt": "# 黑長直學姐 — 身材\r\n\r\n---\r\n\r\n【身材比例 Body】\r\n\r\n身高約 168cm，體重約 52kg，身形修長纖細，帶有成熟學姐感。\r\n\r\n三圍參考：B:89 / W:61 / H:88\r\n\r\n整體比例：修長纖細、肩線柔和、腰細、腿部線條修長漂亮、臀部自然圓潤，\r\n胸部豐滿成熟且具有自然重量感與柔軟支撐感。\r\n\r\n胸型請呈現： 柔軟自然、 圓潤飽滿、 真實受重力影響的成熟胸型，不可做成硬球感或塑膠感。\r\n\r\n請特別保留： 巨乳比例 、明顯胸部重量感 、胸部自然擠壓感 、成熟柔軟體積感 、真實布料包覆感\r\n\r\n皮膚質感：柔嫩、半透明感、自然血色、細膩高光、乾淨無髒感。\r\n\r\n整體必須自然，不要誇張色情化。"
       }
     ],
     "character_hair": [
@@ -132,7 +173,7 @@
           "bangs"
         ],
         "variants": [],
-        "prompt": "# 紫髮少女 — 髮型\n\n---\n\n【髮型 Hair】\n\n極長柔順紫色長髮，帶有藍紫漸層與透明感，高髮量、柔亮細膩的髮流、整齊厚瀏海（平切感，不稀疏）。\n\n髮色為：\n紫色 × 藍紫漸層 × 柔和透明感髮絲高光\n\n請保留：\n紫色長直髮、整齊厚瀏海、柔順自然髮流、乾淨細緻髮束感、日系動畫電影級髮絲光澤。"
+        "prompt": "# 紫髮少女 — 髮型\r\n\r\n---\r\n\r\n【髮型 Hair】\r\n\r\n極長柔順紫色長髮，帶有藍紫漸層與透明感，高髮量、柔亮細膩的髮流、整齊厚瀏海（平切感，不稀疏）。\r\n\r\n髮色為：\r\n紫色 × 藍紫漸層 × 柔和透明感髮絲高光\r\n\r\n請保留：\r\n紫色長直髮、整齊厚瀏海、柔順自然髮流、乾淨細緻髮束感、日系動畫電影級髮絲光澤。"
       },
       {
         "id": "character-senpai-hair",
@@ -144,7 +185,7 @@
           "headband"
         ],
         "variants": [],
-        "prompt": "# 黑長直學姐 — 髮型\n\n---\n\n【髮型 Hair】\n\n極長黑色長直髮，高髮量、柔順細膩，具有透明感與絲綢感。\n\n髮色為：\n深黑色 × 暖棕黑 × 柔和藍紫冷光反射 × 柔和晨光高光\n\n請保留：\n黑長直髮、柔順自然的長髮流向、整齊柔軟瀏海、臉側自然垂落髮絲、乾淨細緻髮束感、日系動畫電影級髮絲高光。\n\n白色髮箍是重要角色特徵，必須保留。\n\n髮箍設定：\n簡潔白色髮箍、乾淨校園學姐感、自然貼合頭型，不要誇張裝飾、不要蝴蝶結、不要花飾、不要過度華麗。\n\n可依場景搭配：\n自然披髮、側髮垂落胸前、微亂居家感、髮尾自然散落在沙發或床面。\n\n但必須維持：黑長直髮 ＋ 白色髮箍 的角色辨識度。"
+        "prompt": "# 黑長直學姐 — 髮型\r\n\r\n---\r\n\r\n【髮型 Hair】\r\n\r\n極長黑色長直髮，高髮量、柔順細膩，具有透明感與絲綢感。\r\n\r\n髮色為：\r\n深黑色 × 暖棕黑 × 柔和藍紫冷光反射 × 柔和晨光高光\r\n\r\n請保留：\r\n黑長直髮、柔順自然的長髮流向、整齊柔軟瀏海、臉側自然垂落髮絲、乾淨細緻髮束感、日系動畫電影級髮絲高光。\r\n\r\n白色髮箍是重要角色特徵，必須保留。\r\n\r\n髮箍設定：\r\n簡潔白色髮箍、乾淨校園學姐感、自然貼合頭型，不要誇張裝飾、不要蝴蝶結、不要花飾、不要過度華麗。\r\n\r\n可依場景搭配：\r\n自然披髮、側髮垂落胸前、微亂居家感、髮尾自然散落在沙發或床面。\r\n\r\n但必須維持：黑長直髮 ＋ 白色髮箍 的角色辨識度。"
       }
     ],
     "outfit": [
@@ -276,7 +317,7 @@
           "sofa"
         ],
         "variants": [],
-        "prompt": "# 慵懶側躺沙發\r\n\r\n適用居家場景的放鬆姿勢。\r\n\r\n---\r\n\r\n【動作 Pose】\r\n\r\n自然日常居家姿勢。\r\n\r\n選項（可擇一）：\r\n- 慵懶側躺在沙發上\r\n- 沿著沙發橫躺，身體與沙發長邊平行\r\n- 單手自然放在腦後，另一手放在身側\r\n- 自然倚靠在沙發扶手上\r\n- 趴在沙發上，頭髮自然垂落\r\n\r\n姿勢要求：\r\n自然、放鬆、生活感，不要刻意擺拍，不要色情姿勢。\r\n\r\n可以自然呈現：\r\n身體柔軟感、成熟曲線、胸部自然重量感、修長腿部線條。"
+        "prompt": "# 慵懶側躺沙發\r\n\r\n適用居家場景的放鬆姿勢。\r\n\r\n---\r\n\r\n【動作 Pose】\r\n\r\n自然日常居家姿勢。\r\n\r\n選項（擇一）：\r\n- 慵懶側躺在沙發上\r\n- 沿著沙發橫躺，身體與沙發長邊平行\r\n- 單手自然放在腦後，另一手放在身側\r\n- 什麼都不做，靜靜坐在沙發上或床上\r\n- 什麼都不做，靜靜躺在沙發上或床上\r\n- 趴在沙發上，頭髮自然垂落\r\n\r\n姿勢要求：\r\n自然、放鬆、生活感，不要刻意擺拍，不要色情姿勢。\r\n\r\n可以自然呈現：\r\n身體柔軟感、成熟曲線、胸部自然重量感、修長腿部線條。"
       },
       {
         "id": "pose-fix-hair",
@@ -463,21 +504,141 @@
         "label": "通用防崩壞",
         "tags": [],
         "variants": [],
-        "prompt": "# 通用防崩壞\r\n\r\n適用所有生成的通用負面 Prompt。\r\n\r\n---\r\n\r\n【負面 Prompt Negative Prompt】\r\n\r\nlow quality, blurry, bad anatomy, extra fingers, fused fingers, malformed hands, extra limbs, distorted face, asymmetrical eyes, ugly eyes, sharp eyes, purple eyes, blue eyes, fantasy eye color, short hair, twin tails, curly hair, blonde hair, silver hair, pink hair, missing headband, oversized hair accessory, bow hair accessory, flower hair accessory, mature seductive makeup, plastic skin, oily skin, bad breasts, unrealistic breasts, hard ball breasts, vulgar expression, pornographic pose, exaggerated nipples, messy room, low detail hair, western face, CGI render, 3D model, low realism, cartoon proportions, overexposed highlights, poor lighting, bad perspective, duplicated body parts, poorly drawn hands, mutated anatomy, ugly smile, dead eyes, emotionless face, flat chest, muscular body, old woman, masculine body, low quality anime, childlike body, overly petite body, purple hair, pink hair, colorful hair"
+        "prompt": "# 通用防崩壞\n\n適用所有生成的通用負面 Prompt。\n僅保留與角色、場景無關的技術性防崩壞詞。\n角色專屬負面詞請使用各角色的 `_負面.md`。\n\n---\n\n【負面 Prompt Negative Prompt】\n\nAvoid: low quality, blurry, bad anatomy, extra fingers, fused fingers, malformed hands, extra limbs, distorted face, asymmetrical eyes, ugly eyes, plastic skin, oily skin, CGI render, 3D model, western face, overexposed highlights, poor lighting, bad perspective, duplicated body parts, poorly drawn hands, mutated anatomy, vulgar expression, pornographic pose, low quality anime, childlike body, text, logo, watermark, AI artifact feel, collapsed anatomy."
+      }
+    ],
+    "shot": [
+      {
+        "id": "shot-medium",
+        "label": "中景（膝上）",
+        "tags": [
+          "medium",
+          "knee-up",
+          "body"
+        ],
+        "variants": [],
+        "prompt": "【景別 Shot Type】\n\n中景鏡頭，框到膝蓋以上。\n\n人物約佔畫面高度 75%–85%，可同時呈現完整服裝、姿勢動作與場景環境。\n背景輕度虛化，人物與場景保持空間感連結。\n\nKeywords: medium shot, knee-up framing, three-quarter body composition, balanced figure and background, cinematic framing."
       },
       {
-        "id": "negative-limbs",
-        "label": "防手腳崩壞",
-        "tags": [],
+        "id": "shot-long",
+        "label": "中遠景（帶場景）",
+        "tags": [
+          "long-shot",
+          "environment",
+          "scene"
+        ],
         "variants": [],
-        "prompt": "# 防手腳崩壞\r\n\r\n針對手部、腳部、肢體的負面 Prompt。疊加在通用版之上使用。\r\n\r\n---\r\n\r\n【負面 Prompt - 手腳專用】\r\n\r\nextra fingers, fused fingers, malformed hands, poorly drawn hands, extra limbs, disconnected limbs, floating limbs, wrong number of fingers, six fingers, missing fingers, deformed hands, anatomically incorrect hands, distorted arms, unnatural arm angle, incorrect foot anatomy, malformed feet, missing toes, extra toes, wrong limb proportions, body floating above surface, no contact shadow."
+        "prompt": "【景別 Shot Type】\n\n中遠景鏡頭，人物較小，強調場景空間與氛圍。\n\n人物約佔畫面高度 40%–60%，周圍保留大量場景環境。\n背景清晰度高，與人物共享同一套視覺風格。\n重點是「人物在場景中的存在感」，而非人物細節。\n\nKeywords: long shot, wide framing, figure in environment, strong background presence, cinematic wide composition, character as part of the scene."
       },
       {
-        "id": "negative-eyes",
-        "label": "防眼睛跑色",
-        "tags": [],
+        "id": "shot-full",
+        "label": "全身",
+        "tags": [
+          "full-body",
+          "head-to-toe"
+        ],
         "variants": [],
-        "prompt": "# 防眼睛跑色\r\n\r\n針對眼睛顏色與形狀的負面 Prompt。針對黑長直學姐使用。\r\n\r\n---\r\n\r\n【負面 Prompt - 眼睛專用】\r\n\r\npurple eyes, blue eyes, green eyes, gold eyes, silver eyes, fantasy eye color, heterochromia, sharp eyes, fox eyes, slit pupils, glowing eyes, dead eyes, emotionless eyes, asymmetrical eyes, cross-eyed, western eye shape, seductive eyes, cold stare, harsh expression."
+        "prompt": "【景別 Shot Type】\n\n全身鏡頭，從頭到腳完整入鏡。\n\n人物約佔畫面高度 85%–95%，完整呈現服裝、鞋子、腿部線條與整體姿勢。\n頭頂與腳底保留少量空間，不要裁切到任何肢體。\n背景有足夠空間感。\n\nKeywords: full body shot, head to toe composition, complete figure framing, full outfit visible, full length portrait."
+      },
+      {
+        "id": "shot-closeup",
+        "label": "特寫",
+        "tags": [
+          "closeup",
+          "face",
+          "expression"
+        ],
+        "variants": [],
+        "prompt": "【景別 Shot Type】\n\n特寫鏡頭，框到肩膀或胸口。\n\n人物約佔畫面高度 90% 以上，強調臉部表情、眼神細節與情緒細節。\n背景高度虛化，只保留環境色調與氛圍光感。\n臉部、眼睛與髮絲需要非常精緻，是畫面主角。\n\nKeywords: extreme close-up framing, face and shoulder composition, highly detailed face and eyes, bokeh background, portrait composition."
+      },
+      {
+        "id": "shot-medium-close",
+        "label": "近景（半身）",
+        "tags": [
+          "medium-close",
+          "waist-up",
+          "half-body"
+        ],
+        "variants": [],
+        "prompt": "【景別 Shot Type】\n\n近景鏡頭，框到腰部，呈現上半身完整。\n\n人物約佔畫面高度 65%–80%，可清楚看到臉部表情、服裝上半部與手部動作。\n背景有適度虛化，保留場景氛圍感。\n\nKeywords: medium close-up, waist-up framing, half body shot, upper body composition, slight bokeh background."
+      }
+    ],
+    "camera": [
+      {
+        "id": "camera-low-right",
+        "label": "低視角・偏右",
+        "tags": [
+          "low-angle",
+          "right",
+          "romantic"
+        ],
+        "variants": [],
+        "prompt": "【視角構圖 Camera】\n\n視角：低視角仰拍（Low-angle），鏡頭低於人物視線，微微向上。\n人物位置：畫面右側三分之一。\n\n常見的日系戀愛視角，帶有輕微仰視的崇拜感與親密感。\n左側保留場景背景，右側人物被輕微仰視，整體氣氛浪漫、自然。\n適合居家、校園、戶外等日常戀愛場景。\n\nKeywords: slight low angle, right-third composition, romantic perspective, upward tilt, Japanese romance anime angle, intimate viewpoint."
+      },
+      {
+        "id": "camera-low-center",
+        "label": "低視角・置中",
+        "tags": [
+          "low-angle",
+          "center",
+          "upward"
+        ],
+        "variants": [],
+        "prompt": "【視角構圖 Camera】\n\n視角：低視角仰拍（Low-angle），鏡頭低於人物視線，向上仰視。\n人物位置：畫面中央。\n\n仰視視角帶來存在感、衝擊感或崇拜感，角色顯得更高挑、有氣勢。\n天空或場景上方背景佔比增加。\n適合表現角色的氣場、神聖感或戲劇性。\n\nKeywords: low angle shot, upward perspective, centered composition, powerful presence, dramatic upward view, figure against sky."
+      },
+      {
+        "id": "camera-eye-right",
+        "label": "平視・偏右",
+        "tags": [
+          "eye-level",
+          "right",
+          "rule-of-thirds"
+        ],
+        "variants": [],
+        "prompt": "【視角構圖 Camera】\n\n視角：平視（Eye-level），鏡頭高度與人物視線齊平。\n人物位置：畫面右側三分之一。\n\n人物偏右，左側保留較多背景空間。\n常見的日系戀愛動畫構圖，帶有輕微的電影感不對稱美感，視線自然引導向左側背景。\n\nKeywords: eye-level angle, right-third composition, rule of thirds, negative space on left, Japanese anime cinematic framing."
+      },
+      {
+        "id": "camera-eye-left",
+        "label": "平視・偏左",
+        "tags": [
+          "eye-level",
+          "left",
+          "rule-of-thirds"
+        ],
+        "variants": [],
+        "prompt": "【視角構圖 Camera】\n\n視角：平視（Eye-level），鏡頭高度與人物視線齊平。\n人物位置：畫面左側三分之一。\n\n人物偏左，右側保留較多背景空間，形成視線引導往右的構圖張力。\n適合表現場景縱深、角色與環境的關係，或呈現角色正在朝右方移動的動態感。\n\nKeywords: eye-level angle, left-third composition, rule of thirds, negative space on right, leading lines toward right."
+      },
+      {
+        "id": "camera-eye-center",
+        "label": "平視・置中",
+        "tags": [
+          "eye-level",
+          "center"
+        ],
+        "variants": [],
+        "prompt": "【視角構圖 Camera】\n\n視角：平視（Eye-level），鏡頭高度與人物視線齊平。\n人物位置：畫面水平中央。\n\n標準正面構圖，親近自然。左右背景對稱分布，人物作為畫面焦點。\n適合表現角色氣質與表情，呈現直接的眼神接觸感。\n\nKeywords: eye-level angle, centered composition, symmetrical framing, direct eye contact, natural perspective."
+      },
+      {
+        "id": "camera-over-shoulder",
+        "label": "過肩・主觀視角",
+        "tags": [
+          "over-shoulder",
+          "pov",
+          "intimate"
+        ],
+        "variants": [],
+        "prompt": "【視角構圖 Camera】\n\n視角：過肩鏡頭或主觀視角（Over-the-shoulder / POV），模擬「從某人的視角看向角色」。\n人物位置：畫面中央到偏側均可，依場景決定。\n\n帶有強烈的沉浸感與親密感，觀者像是真實存在於場景中。\n前景可有模糊的肩膀、桌面、椅背等遮擋物，增加視角真實感。\n適合對話場景、教室、咖啡廳、車廂等面對面情境。\n\nKeywords: over-the-shoulder shot, POV perspective, immersive viewpoint, foreground occlusion, first-person adjacent angle, intimate framing, viewer presence in scene."
+      },
+      {
+        "id": "camera-high",
+        "label": "高視角・俯拍",
+        "tags": [
+          "high-angle",
+          "overhead",
+          "cute"
+        ],
+        "variants": [],
+        "prompt": "【視角構圖 Camera】\n\n視角：高視角俯拍（High-angle），鏡頭高於人物視線，向下俯視。\n人物位置：畫面中央或略偏。\n\n俯視視角帶來可愛感、脆弱感或夢幻感，角色顯得嬌小。\n地面、床面、桌面等場景元素佔比增加，適合呈現生活感細節。\n適合睡姿、坐姿、俯臥等場景。\n\nKeywords: high angle shot, overhead perspective, downward view, cute and vulnerable impression, bird's eye adjacent, figure from above."
       }
     ]
   }

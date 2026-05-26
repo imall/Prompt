@@ -107,7 +107,7 @@ async function init() {
   }
 
   // ── Text helpers ──────────────────────────────────────────────────
-  function cleanPositive(raw) {
+  function cleanPrompt(raw) {
     const lines = raw.split('\n');
     // Skip intro/note lines before the first 【...】 section
     const firstSection = lines.findIndex(l => /^【/.test(l.trim()));
@@ -124,20 +124,6 @@ async function init() {
       .trim();
   }
 
-  function assembleNegative(prompts) {
-    return prompts
-      .flatMap(p => p.split('\n'))
-      .map(l => l.trim())
-      .filter(l => {
-        if (!l || l.startsWith('#') || l === '---' || /^【.*】/.test(l)) return false;
-        const ascii = (l.match(/[a-zA-Z0-9,\s_\-]/g) || []).length;
-        return l.includes(',') || ascii / l.length > 0.5;
-      })
-      .join(', ')
-      .replace(/,\s*,+/g, ', ')
-      .trim();
-  }
-
   function applyVariant(moduleId, baseText) {
     const variantId = variantSelections[moduleId];
     const variant = moduleMap[moduleId]?.variants?.find(v => v.id === variantId);
@@ -145,33 +131,39 @@ async function init() {
   }
 
   // ── Dirty tracking ────────────────────────────────────────────────
-  const dirty = { pos: false, neg: false };
+  const dirty = { pos: false };
   const posOut = document.getElementById('pos-out');
-  const negOut = document.getElementById('neg-out');
 
-  posOut.addEventListener('input', () => setDirty('pos', true));
-  negOut.addEventListener('input', () => setDirty('neg', true));
+  posOut.addEventListener('input', () => setDirty(true));
 
-  function setDirty(key, val) {
-    dirty[key] = val;
-    document.getElementById(`refresh-${key}`).classList.toggle('dirty', val);
+  function setDirty(val) {
+    dirty.pos = val;
+    document.getElementById('refresh-pos').classList.toggle('dirty', val);
   }
 
-  document.getElementById('refresh-pos').addEventListener('click', () => { setDirty('pos', false); update(); });
-  document.getElementById('refresh-neg').addEventListener('click', () => { setDirty('neg', false); update(); });
+  document.getElementById('refresh-pos').addEventListener('click', () => { setDirty(false); update(); });
+
+  // ── Negative category IDs ─────────────────────────────────────────
+  const NEG_CATS = new Set(['negative', 'character_negative']);
 
   // ── Assemble & render ─────────────────────────────────────────────
   function update() {
     const posParts = [];
-    const negPrompts = [];
+    const negParts = [];
 
     for (const cat of categories) {
       const sel = selections[cat.id];
+      const isNeg = NEG_CATS.has(cat.id);
 
-      if (cat.id === 'negative') {
-        for (const id of sel) {
-          const m = moduleMap[id];
-          if (m) negPrompts.push(m.prompt);
+      if (isNeg) {
+        if (cat.multi) {
+          for (const id of sel) {
+            const m = moduleMap[id];
+            if (m) negParts.push(cleanPrompt(m.prompt));
+          }
+        } else if (sel) {
+          const m = moduleMap[sel];
+          if (m) negParts.push(cleanPrompt(m.prompt));
         }
         continue;
       }
@@ -180,11 +172,11 @@ async function init() {
       if (cat.multi) {
         for (const id of sel) {
           const m = moduleMap[id];
-          if (m) parts.push(applyVariant(id, cleanPositive(m.prompt)));
+          if (m) parts.push(applyVariant(id, cleanPrompt(m.prompt)));
         }
       } else if (sel) {
         const m = moduleMap[sel];
-        if (m) parts.push(applyVariant(sel, cleanPositive(m.prompt)));
+        if (m) parts.push(applyVariant(sel, cleanPrompt(m.prompt)));
       }
 
       if (parts.length) {
@@ -193,37 +185,28 @@ async function init() {
       }
     }
 
-    const posText = posParts.join('\n\n');
-    const negText = assembleNegative(negPrompts);
+    let fullText = posParts.join('\n\n');
+    if (negParts.length) {
+      fullText += '\n\n---\n\n' + negParts.join('\n\n');
+    }
 
     if (!dirty.pos) {
-      posOut.value = posText;
-      document.getElementById('pos-count').textContent = posText ? `${posText.length} 字元` : '';
+      posOut.value = fullText;
+      document.getElementById('pos-count').textContent = fullText ? `${fullText.length} 字元` : '';
     } else {
       document.getElementById('pos-count').textContent = posOut.value ? `${posOut.value.length} 字元` : '';
     }
-    if (!dirty.neg) {
-      negOut.value = negText;
-      document.getElementById('neg-count').textContent = negText ? `${negText.length} 字元` : '';
-    } else {
-      document.getElementById('neg-count').textContent = negOut.value ? `${negOut.value.length} 字元` : '';
-    }
   }
 
-  // ── Copy buttons ──────────────────────────────────────────────────
-  function bindCopy(btnId, srcId) {
-    document.getElementById(btnId).addEventListener('click', async function () {
-      const text = document.getElementById(srcId).value;
-      if (!text) return;
-      await navigator.clipboard.writeText(text);
-      this.textContent = '✓ 已複製';
-      this.classList.add('copied');
-      setTimeout(() => { this.textContent = '複製'; this.classList.remove('copied'); }, 2000);
-    });
-  }
-
-  bindCopy('copy-pos', 'pos-out');
-  bindCopy('copy-neg', 'neg-out');
+  // ── Copy button ───────────────────────────────────────────────────
+  document.getElementById('copy-pos').addEventListener('click', async function () {
+    const text = posOut.value;
+    if (!text) return;
+    await navigator.clipboard.writeText(text);
+    this.textContent = '✓ 已複製';
+    this.classList.add('copied');
+    setTimeout(() => { this.textContent = '複製'; this.classList.remove('copied'); }, 2000);
+  });
 
   // ── Clear all ─────────────────────────────────────────────────────
   document.getElementById('clear-btn').addEventListener('click', () => {
@@ -236,8 +219,7 @@ async function init() {
     });
     for (const cat of categories) selections[cat.id] = cat.multi ? new Set() : '';
     Object.keys(variantSelections).forEach(k => { variantSelections[k] = ''; });
-    setDirty('pos', false);
-    setDirty('neg', false);
+    setDirty(false);
     update();
   });
 }

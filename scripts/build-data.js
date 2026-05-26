@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const LIBRARY_DIR = path.resolve(__dirname, '../../Prompt-Library');
+const LIBRARY_DIR = path.resolve(__dirname, '../Prompt-Library');
 const CONFIG_PATH = path.resolve(__dirname, '../config.json');
 const OUTPUT_PATH = path.resolve(__dirname, '../data/data.json');
 
