@@ -297,3 +297,31 @@ async function init() {
 }
 
 init().catch(console.error);
+
+// ── Resizable sidebar ──────────────────────────────────────────────
+const resizer = document.getElementById('resizer');
+const sidebarEl = document.getElementById('sidebar');
+let isResizing = false;
+
+resizer.addEventListener('mousedown', () => {
+  isResizing = true;
+  resizer.classList.add('dragging');
+  document.body.style.cursor = 'col-resize';
+  document.body.style.userSelect = 'none';
+});
+
+document.addEventListener('mousemove', e => {
+  if (!isResizing) return;
+  const mainRect = document.querySelector('main').getBoundingClientRect();
+  const maxWidth = mainRect.width / 2;
+  const newWidth = Math.max(160, Math.min(maxWidth, e.clientX - mainRect.left));
+  sidebarEl.style.width = newWidth + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+  if (!isResizing) return;
+  isResizing = false;
+  resizer.classList.remove('dragging');
+  document.body.style.cursor = '';
+  document.body.style.userSelect = '';
+});

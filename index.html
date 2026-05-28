@@ -62,9 +62,10 @@
     /* ── Sidebar ── */
     #sidebar {
       width: 240px;
+      min-width: 160px;
+      max-width: 50vw;
       flex-shrink: 0;
       overflow-y: auto;
-      border-right: 1px solid var(--border);
       padding: 14px 12px;
       display: flex;
       flex-direction: column;
@@ -72,6 +73,16 @@
       scrollbar-width: thin;
       scrollbar-color: var(--border) transparent;
     }
+
+    /* ── Resizer ── */
+    #resizer {
+      width: 4px;
+      flex-shrink: 0;
+      background: var(--border);
+      cursor: col-resize;
+      transition: background .15s;
+    }
+    #resizer:hover, #resizer.dragging { background: var(--accent); }
 
     .cat-group { display: flex; flex-direction: column; gap: 5px; }
 
@@ -229,6 +240,7 @@
   </header>
   <main>
     <div id="sidebar"></div>
+    <div id="resizer"></div>
     <div id="output">
       <div class="out-section">
         <div class="out-header">
