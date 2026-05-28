@@ -12,7 +12,20 @@
       "Bash(git commit -m 'feat: auto-group modules under category section headers *)",
       "Bash(git commit -m 'fix: show variant sub-selector for checkbox \\(multi-select\\) items *)",
       "Bash(git commit -m 'feat: add more CK color variants \\(black/white/ivory/gray/light-gray/lilac/nude\\) *)",
-      "Bash(git commit -m 'feat: add root redirect to prompt-generate for GitHub Pages *)"
+      "Bash(git commit -m 'feat: add root redirect to prompt-generate for GitHub Pages *)",
+      "Bash(git mv:*)",
+      "Bash(git rm:*)",
+      "Bash(cp /dev/null /dev/null)",
+      "Bash(git checkout:*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//e/repos/Prompt/**)",
+      "Bash(done)",
+      "Bash(mkdir -p \"02_角色/髮型\" \"02_角色/身材\" \"02_角色/負面\" \"09_景別\" \"10_視角構圖\")",
+      "Bash(mv \"02_角色/費倫_髮型.md\" \"02_角色/髮型/\")",
+      "Bash(mv \"02_角色/霞之丘詩羽_髮型.md\" \"02_角色/髮型/\")",
+      "Bash(mv \"02_角色/費倫_身材.md\" \"02_角色/身材/\")",
+      "Bash(mv \"02_角色/霞之丘詩羽_身材.md\" \"02_角色/身材/\")"
     ]
   }
 }

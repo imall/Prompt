@@ -34,6 +34,8 @@ function main() {
       label: data.label ?? data.id,
       tags: data.tags ?? [],
       variants: data.variants ?? [],
+      options: data.options ?? null,
+      prompt_template: data.prompt_template ?? null,
       prompt: content.trim(),
     });
   }

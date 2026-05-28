@@ -9,6 +9,7 @@ async function init() {
   const sidebar = document.getElementById('sidebar');
   const selections = {};         // catId → '' | Set
   const variantSelections = {};  // moduleId → variantId string
+  const optionSelections = {};   // moduleId → { axis: value }
 
   // ── Render selectors ──────────────────────────────────────────────
   for (const cat of categories) {
@@ -35,7 +36,14 @@ async function init() {
 
         // Variant placeholder (hidden until checkbox checked)
         const varPh = document.createElement('div');
-        if (item.variants?.length) {
+        const hasOpts = item.options?.length;
+        const hasVariants = item.variants?.length;
+        if (hasOpts) {
+          optionSelections[item.id] = {};
+          renderOptionsInto(item, varPh);
+          varPh.style.display = 'none';
+        } else if (hasVariants) {
+          variantSelections[item.id] = '';
           const varSel = document.createElement('select');
           varSel.className = 'variant-sel';
           varSel.innerHTML = `<option value="">— 版本/顏色 —</option>` +
@@ -50,10 +58,10 @@ async function init() {
 
         cb.addEventListener('change', () => {
           cb.checked ? selections[cat.id].add(item.id) : selections[cat.id].delete(item.id);
-          if (item.variants?.length) varPh.style.display = cb.checked ? '' : 'none';
+          if (hasOpts || hasVariants) varPh.style.display = cb.checked ? '' : 'none';
           if (!cb.checked) {
-            variantSelections[item.id] = '';
-            varPh.querySelector('select').value = '';
+            if (hasVariants) { variantSelections[item.id] = ''; varPh.querySelector('select').value = ''; }
+            if (hasOpts) { optionSelections[item.id] = {}; resetOptionsUI(varPh); }
           }
           update();
         });
@@ -92,8 +100,14 @@ async function init() {
     placeholder.innerHTML = '';
     if (!moduleId) return;
     const m = moduleMap[moduleId];
-    if (!m?.variants?.length) return;
 
+    if (m?.options?.length) {
+      optionSelections[moduleId] = {};
+      renderOptionsInto(m, placeholder);
+      return;
+    }
+
+    if (!m?.variants?.length) return;
     variantSelections[moduleId] = '';
     const sel = document.createElement('select');
     sel.className = 'variant-sel';
@@ -104,6 +118,45 @@ async function init() {
       update();
     });
     placeholder.appendChild(sel);
+  }
+
+  function renderOptionsInto(m, placeholder) {
+    const moduleId = m.id;
+    for (const opt of m.options) {
+      const row = document.createElement('div');
+      row.className = 'option-row';
+      if (opt.type === 'select') {
+        const sel = document.createElement('select');
+        sel.className = 'variant-sel';
+        sel.innerHTML = `<option value="">— ${opt.label} —</option>` +
+          opt.choices.map(c => `<option value="${c.id}">${c.label}</option>`).join('');
+        sel.addEventListener('change', () => {
+          optionSelections[moduleId] = optionSelections[moduleId] ?? {};
+          optionSelections[moduleId][opt.axis] = sel.value;
+          update();
+        });
+        row.appendChild(sel);
+      } else if (opt.type === 'toggle') {
+        const lbl = document.createElement('label');
+        lbl.className = 'check-row';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.addEventListener('change', () => {
+          optionSelections[moduleId] = optionSelections[moduleId] ?? {};
+          optionSelections[moduleId][opt.axis] = cb.checked;
+          update();
+        });
+        lbl.appendChild(cb);
+        lbl.append(` ${opt.label}`);
+        row.appendChild(lbl);
+      }
+      placeholder.appendChild(row);
+    }
+  }
+
+  function resetOptionsUI(placeholder) {
+    placeholder.querySelectorAll('select').forEach(s => s.value = '');
+    placeholder.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = false);
   }
 
   // ── Text helpers ──────────────────────────────────────────────────
@@ -125,8 +178,26 @@ async function init() {
   }
 
   function applyVariant(moduleId, baseText) {
+    const m = moduleMap[moduleId];
+
+    if (m?.options?.length && m?.prompt_template) {
+      const sels = optionSelections[moduleId] ?? {};
+      let prompt = m.prompt_template;
+      for (const opt of m.options) {
+        let value = '';
+        if (opt.type === 'select') {
+          const choice = opt.choices?.find(c => c.id === sels[opt.axis]);
+          value = choice?.value ?? '';
+        } else if (opt.type === 'toggle') {
+          value = sels[opt.axis] ? (opt.token ?? '') : '';
+        }
+        prompt = prompt.replace(`{${opt.axis}}`, value);
+      }
+      return prompt + '\n\n' + baseText;
+    }
+
     const variantId = variantSelections[moduleId];
-    const variant = moduleMap[moduleId]?.variants?.find(v => v.id === variantId);
+    const variant = m?.variants?.find(v => v.id === variantId);
     return variant?.prompt ? variant.prompt + '\n\n' + baseText : baseText;
   }
 
@@ -219,6 +290,7 @@ async function init() {
     });
     for (const cat of categories) selections[cat.id] = cat.multi ? new Set() : '';
     Object.keys(variantSelections).forEach(k => { variantSelections[k] = ''; });
+    Object.keys(optionSelections).forEach(k => { optionSelections[k] = {}; });
     setDirty(false);
     update();
   });
