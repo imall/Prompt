@@ -86,7 +86,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "【整體核心要求 Core Requirement】\r\n\r\n請以我提供的角色參考圖作為唯一人物原型。 \r\n\r\n整體風格： 自然系日本動畫電影插畫、 柔和手繪動漫上色、 日系戀愛遊戲氛圍、 自然動漫色彩平衡、 柔和電影感光影、 高級日系生活感插畫、 溫暖舒適的動漫寫實感。 \r\n\r\n畫面整體感受： 乾淨、 柔和、 透明、 溫暖、 舒適、 有生活感、 有戀愛氛圍、 像高品質日本動畫電影的一幕。 \r\n\r\n最重要： 臉部、脖子、胸部、腹部、手臂、腿部， 必須共享相同的光線、色溫、明暗、飽和度與膚色平衡。 臉部絕對不要被單獨美白或單獨補光。 \r\n\r\n臉部不可： 比身體更白、 比身體更粉、 比身體更亮、 比身體更乾淨、 比身體更柔焦。 整體角色必須共享一致的暖色晨光。 避免： 臉部過曝、 美肌濾鏡感、 CG 娃娃皮膚、 臉部與身體色溫分離、 臉部獨立打光。 自然統一的膚色、且不可過度光滑，保持插畫感，極度重要。"
+        "prompt": "【整體核心要求 Core Requirement】\r\n\r\n請以我提供的角色參考圖作為唯一人物原型。 \r\n\r\n整體風格： 自然系日本動畫電影插畫、 柔和手繪動漫上色、 日系戀愛遊戲氛圍、 自然動漫色彩平衡、 柔和電影感光影、 高級日系生活感插畫、 溫暖舒適的動漫寫實感。 \r\n\r\n畫面整體感受： 乾淨、 柔和、 透明、 溫暖、 舒適、 有生活感、 有戀愛氛圍、 像高品質日本動畫電影的一幕。 \r\n\r\n最重要： 臉部、脖子、胸部、腹部、手臂、腿部， 必須共享相同的光線、色溫、明暗、飽和度與膚色平衡。 臉部絕對不要被單獨美白或單獨補光。 \r\n\r\n臉部不可： 比身體更白、 比身體更粉、 比身體更亮、 比身體更乾淨、 比身體更柔焦。 整體角色必須共享一致的暖色晨光。 避免： 臉部過曝、 美肌濾鏡感、 CG 娃娃皮膚、 臉部與身體色溫分離、 臉部獨立打光。 自然統一的膚色、且不可過度光滑，保持插畫感，極度重要。\r\n\r\n人物與背景統一原則：\r\n人物與背景必須完全整合在同一套美術風格中，不要讓角色像貼在背景上的獨立圖層。\r\n人物、服裝、頭髮、皮膚與背景共享同一光源方向、相同色溫、相同對比度與相同空氣感。\r\n角色身上要受到環境光影影響，有自然的接觸陰影。"
       }
     ],
     "character": [
@@ -672,22 +672,24 @@
     ],
     "lighting": [
       {
-        "id": "lighting-ferris-night",
-        "label": "摩天輪夜景光",
+        "id": "lighting-night-contrast",
+        "label": "夜景冷暖對比光",
         "tags": [
           "night",
           "warm",
+          "cool",
           "contrast",
-          "city-lights"
+          "cinematic",
+          "bokeh"
         ],
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 摩天輪夜景光\r\n\r\n夜晚摩天輪車廂室內外光影對比。\r\n\r\n---\r\n\r\n【燈光 Lighting】\r\n\r\n暖色車廂燈光與冷色夜景形成浪漫對比。\r\n\r\n光影設定：\r\n- 車廂內柔和暖色燈光\r\n- 窗外深藍冷色夜空\r\n- 城市霓虹反射\r\n- 玻璃窗反射城市燈海\r\n- 髮絲透光效果\r\n- 空氣中細微光粒與星塵散景\r\n- 柔和景深\r\n\r\n整體：\r\n暖色室內光 × 藍色夜景光的電影感對比，細微光粒、星塵感與夢幻散景。\r\n\r\nKeywords: warm interior light, night skyline, depth of field, soft glow, volumetric lighting, dreamy night city lights, romantic atmosphere, ferris wheel date scene."
+        "prompt": "# 夜景冷暖對比光\n\n---\n\n【燈光畫風 Lighting & Style】\n\n光源性質：\n室內暖色光源與室外冷色夜景形成電影感冷暖對比。\n\n光影特徵：\n暖色主光打亮角色臉部與輪廓、冷藍色夜光從背景滲入、髮絲透光效果、空氣中細微光粒與散景光點。\n\n景深：\n柔和淺景深、遠景虛化夢幻光斑、前景細微散景。\n\n感覺：\n浪漫、電影感、夢幻、安靜、親密感。\n\n色調：\n暖橙 × 金色室內光 × 深藍 × 紫藍夜色，高對比但不刺眼。\n\nKeywords: warm indoor light, cool night background, cinematic warm-cool contrast, bokeh city lights, soft depth of field, volumetric glow, romantic night atmosphere."
       },
       {
         "id": "lighting-anime-film",
-        "label": "日系戀愛動畫電影",
+        "label": "日系動畫電影畫風",
         "tags": [
           "cinematic",
           "anime",
@@ -697,21 +699,22 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 日系戀愛動畫電影畫風\r\n\r\n通用畫風描述，可疊加在任何場景上。\r\n\r\n---\r\n\r\n【畫風 Style】\r\n\r\n整體畫風：不要模仿任何特定在世藝術家的筆觸或固定畫風，而是採用高品質日本動畫電影的視覺語言。\r\n\r\n要有：\r\n- 清澈透明的光線表現\r\n- 明亮乾淨的天空（戶外場景）\r\n- 細膩寫實但動畫化的背景\r\n- 柔和但強烈的自然光\r\n- 藍紫金色調的柔和漸層\r\n- 細膩光斑\r\n- 空氣透視\r\n- 輕微鏡頭耀光（可選）\r\n- 柔和膠片顆粒\r\n- cinematic lighting\r\n- 新海誠電影般透明光影\r\n- 京都動畫般生活感\r\n\r\n人物與背景統一原則：\r\n人物與背景必須完全統一在同一套高級日本動畫電影美術風格中。\r\n不要讓角色像貼在背景上的獨立圖層。\r\n人物、服裝、頭髮、皮膚與背景都要共享同一個光源方向、相同色溫、相同對比度、相同銳利度與相同的空氣感。\r\n角色身上要受到環境光影影響，有自然的接觸陰影。\r\n\r\n請優先確保：「人物與背景是同一部高級日本動畫電影中的同一個鏡頭」，而不是精緻角色插畫放在精緻背景上。"
+        "prompt": "# 日系動畫電影畫風\n\n---\n\n【燈光畫風 Lighting & Style】\n\n畫風：\n高品質日本動畫電影視覺語言。\n手繪感動漫上色、細膩自然光渲染、柔和但立體的陰影層次。\n\n光影品質：\n清澈透明的光線表現、柔和但強烈的自然光、細膩光斑、空氣透視感、輕微鏡頭耀光、柔和膠片顆粒感。\n\n色調：\n藍紫 × 金色系柔和漸層、自然動漫色彩平衡、溫暖舒適的整體色溫。\n\nKeywords: Japanese anime film style, transparent cinematic lighting, soft natural light, airy atmosphere, hand-drawn animation quality, unified character and background rendering."
       },
       {
         "id": "lighting-morning-soft",
-        "label": "柔和晨光",
+        "label": "柔和漫射逆光",
         "tags": [
-          "morning",
           "soft",
           "backlight",
-          "warm"
+          "diffuse",
+          "warm",
+          "airy"
         ],
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 柔和晨光\r\n\r\n日系居家晨間光影，適用 MUJI 公寓場景。\r\n\r\n---\r\n\r\n【燈光 Lighting】\r\n\r\n柔和日系晨光。\r\n\r\n光源設定：\r\n明亮自然光穿過白色薄紗窗簾，形成柔和逆光與透明空氣感。\r\n\r\n光影需要包含：\r\n半透明空氣感、柔和逆光、細膩皮膚散射、柔光高光、透明感陰影、溫暖日系晨間氛圍。\r\n\r\n整體亮度：\r\n偏高明度、乾淨、夢幻、柔和、不刺眼。\r\n\r\n主要色彩：\r\n黑色、深棕黑色、白色、奶油色晨光、柔和木質色、淡粉色高光、透明高光。\r\n\r\nKeywords: soft morning light, airy transparency, backlighting through sheer curtains, warm Japanese morning atmosphere."
+        "prompt": "# 柔和漫射逆光\n\n---\n\n【燈光畫風 Lighting & Style】\n\n光源性質：\n柔和的自然光從角色後方或側後方透射而來，形成明亮逆光與漫射光暈。\n\n光影特徵：\n半透明空氣感、柔和逆光輪廓光、細膩皮膚散射光、柔光高光、透明感淺陰影、高明度整體亮度。\n\n感覺：\n乾淨、夢幻、柔和、透亮、不刺眼、帶有自然溫暖色溫。\n\n色調：\n暖白 × 奶油光 × 淡粉高光，整體偏高明度乾淨色調。\n\nKeywords: soft backlight, diffused natural light, airy transparency, warm white glow, high-key gentle lighting, skin scattering, soft rim light."
       }
     ],
     "size": [
