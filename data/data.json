@@ -60,10 +60,16 @@
       "header": "【場景 Environment】"
     },
     {
-      "id": "lighting",
-      "label": "光影畫風",
+      "id": "style",
+      "label": "畫風",
       "multi": false,
-      "header": "【燈光畫風 Lighting & Style】"
+      "header": "【畫風 Style】"
+    },
+    {
+      "id": "lighting",
+      "label": "光影",
+      "multi": false,
+      "header": "【光影 Lighting】"
     },
     {
       "id": "size",
@@ -314,11 +320,11 @@
           }
         ],
         "prompt_template": "{color}{brand}soft cotton underwear set{lace}, casual relaxed Japanese lifestyle styling.",
-        "prompt": "# CK 居家內衣\n\nCalvin Klein 風格居家棉質內衣套裝。\n\n---\n\n【服裝 Outfit】\n\n服裝重點：\n居家感、高級日系感、微慵懶、自然貼合成熟曲線，但不要低俗色情。\n\n布料質感：\n柔軟棉質感、薄感、輕微透光感、高級日系寫真氛圍、自然布料包覆感。\n\n整體服裝需要襯托角色氣質：\n乾淨、溫柔、成熟、安靜、親近感。"
+        "prompt": "# CK 居家內衣\n\nCalvin Klein 風格居家棉質內衣套裝。\n\n---\n\n【服裝 Outfit】\n\n服裝重點：\n居家感、高級日系感、微慵懶、自然貼合成熟曲線，但不要低俗色情，可正常呈現胸部自然下垂的柔軟感覺。 \n\n布料質感：\n柔軟棉質感、薄感、輕微透光感、高級日系寫真氛圍、自然布料包覆感。\n\n整體服裝需要襯托角色氣質：\n乾淨、溫柔、成熟、安靜、親近感。"
       },
       {
         "id": "outfit-miko",
-        "label": "巫女服",
+        "label": "傳統巫女服",
         "tags": [
           "traditional",
           "shrine",
@@ -482,6 +488,21 @@
         "prompt": "# 白色水手服制服\r\n\r\n適用學校場景的日系校園制服。\r\n\r\n---\r\n\r\n【服裝 Outfit】\r\n\r\n白色水手服風格制服。\r\n\r\n服裝組成：\r\n- 白色短袖上衣（上衣無口袋）\r\n- 黑色百褶裙\r\n- 黑色領結或細緞帶裝飾\r\n\r\n布料質感：\r\n布料較薄，但整體端莊、自然、完整覆蓋。\r\n\r\n整體服裝必須保持乾淨、端莊、自然、電影感，不低俗、不刻意性感化。\r\n\r\n在雨天場景中：\r\n雨傘無法完全遮擋的肩膀部位因雨水略微打濕，呈現自然的濕潤感；黑色裙子下擺亦被雨水浸濕，呈現真實布料吸水後的垂墜感。"
       },
       {
+        "id": "outfit-kagura-dance",
+        "label": "神樂舞衣（改良大袖）",
+        "tags": [
+          "shrine",
+          "kagura",
+          "dance",
+          "elaborate",
+          "wide-sleeve"
+        ],
+        "variants": [],
+        "options": null,
+        "prompt_template": null,
+        "prompt": "# 神樂舞衣（改良大袖）\n\n---\n\n【服裝 Outfit】\n\n華麗改良式神樂舞專用巫女舞衣。\n\n服裝組成：\n- 白色小袖上衣（厚實、柔軟、高級祭儀布料）\n- 深紅色緋袴\n- 紅色腰帶\n- 紅白髮飾\n- 手持神樂鈴（附流蘇）\n- 手持金色祭儀扇\n\n袖子設計（核心特色）：\n華麗寬大的改良式舞袖，袖口明顯放大，袖身寬鬆飄逸。\n外層覆蓋淡紫色透明薄紗，帶有柔和花紋刺繡與細緻金線點綴。\n袖口與衣緣有紅色細線、紅色繩結與細小流蘇裝飾。\n舞動時形成大面積柔和弧線與半透明光影。\n\n衣料質感：\n白色上衣厚實不透明，具有自然布料張力、垂墜皺褶、下緣陰影與腰帶上方堆疊感。\n薄紗外層在逆光下呈現柔和透光感與細膩刺繡紋理。\n整體服裝完整、不透明、不破損，保持典雅、神聖、非低俗化。\n\n身材呈現方式：\n上身曲線由厚實布料自然覆蓋與承托，透過布料張力、垂墜、下緣陰影與光影層次呈現柔和體積感。\n不要生成硬挺球狀胸型。整體效果典雅、莊重、神聖。\n\n袖口避免：袖子太窄、袖口太小、普通巫女服袖型、缺少飄逸薄紗。"
+      },
+      {
         "id": "outfit-date-dress",
         "label": "高級約會洋裝",
         "tags": [
@@ -509,7 +530,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 坐在摩天輪車廂\r\n\r\n適用摩天輪夜景場景。\r\n\r\n---\r\n\r\n【動作 Pose】\r\n\r\n角色坐在摩天輪車廂座位上，身體自然坐姿、自然倚靠在椅背，雙手輕輕扶著座椅邊緣，姿勢自然害羞，不要過度挑逗。\r\n\r\n長髮自然散落在座位、肩前與腿部周圍，部分髮絲被車廂內微風吹起。\r\n\r\n表情：\r\n第一次夜晚約會時的害羞戀愛感，微微泛紅的臉頰、柔和害羞的笑意、溫柔依戀的眼神，安靜凝視鏡頭。\r\n不要皺眉、不要冷淡、不要妖豔、不要空洞。\r\n\r\n畫面像坐在對面的戀人視角，安靜、甜蜜、緊張，有深夜兩人獨處的劇場版電影感。"
+        "prompt": "# 坐在摩天輪車廂\n\n---\n\n【動作 Pose】\n\n角色坐在摩天輪車廂座位上，身體自然坐姿、自然倚靠在椅背，雙手輕輕扶著座椅邊緣，姿勢自然害羞，不要過度挑逗。\n\n頭髮自然散落在座位、肩前與腿部周圍，部分髮絲被車廂內微風吹起。\n\n姿勢要求：\n自然、安靜、放鬆，不要刻意擺拍，不要色情姿勢。"
       },
       {
         "id": "pose-lounge-sofa",
@@ -523,7 +544,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 慵懶側躺沙發\r\n\r\n適用居家場景的放鬆姿勢。\r\n\r\n---\r\n\r\n【動作 Pose】\r\n\r\n自然日常居家姿勢。\r\n\r\n選項（擇一）：\r\n- 慵懶側躺在沙發上\r\n- 沿著沙發橫躺，身體與沙發長邊平行\r\n- 單手自然放在腦後，另一手放在身側\r\n- 什麼都不做，靜靜坐在沙發上或床上\r\n- 什麼都不做，靜靜躺在沙發上或床上\r\n- 趴在沙發上，頭髮自然垂落\r\n\r\n姿勢要求：\r\n自然、放鬆、生活感，不要刻意擺拍，不要色情姿勢。\r\n\r\n可以自然呈現：\r\n身體柔軟感、成熟曲線、胸部自然重量感、修長腿部線條。"
+        "prompt": "# 慵懶側躺沙發\n\n---\n\n【動作 Pose】\n\n自然日常居家姿勢。\n\n選項（擇一）：\n- 慵懶側躺在沙發上\n- 沿著沙發橫躺，身體與沙發長邊平行\n- 單手自然放在腦後，另一手放在身側\n- 什麼都不做，靜靜坐在沙發上或床上\n- 什麼都不做，靜靜躺在沙發上或床上\n- 趴在沙發上，頭髮自然垂落\n\n姿勢要求：\n自然、放鬆、生活感，不要刻意擺拍，不要色情姿勢。"
       },
       {
         "id": "pose-fix-hair",
@@ -537,7 +558,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 整理頭髮\r\n\r\n---\r\n\r\n【動作 Pose】\r\n\r\n整理或綁頭髮的自然居家動作。\r\n\r\n選項：\r\n- 整理頭髮（站立或坐姿）\r\n- 雙手抬到後腦勺，正在把長髮綁成高馬尾\r\n- 嘴裡輕輕叼著黑色髮圈\r\n- 側身讓頭髮自然垂落\r\n\r\n姿勢要求：\r\n自然、放鬆、生活感，不要刻意擺拍，不要色情姿勢。\r\n\r\n在教室場景中：\r\n角色坐在靠窗的位置，坐姿端正，因椅子轉動而面向後座（轉動約 120 度），身體約四分之三朝向後座。\r\n察覺到後座有人在看她，露出不知所措的害羞表情，眼神偷偷斜瞄後座方向。"
+        "prompt": "# 整理頭髮\n\n---\n\n【動作 Pose】\n\n整理或綁頭髮的自然居家動作。\n\n選項：\n- 整理頭髮（站立或坐姿）\n- 雙手抬到後腦勺，正在把長髮綁成高馬尾\n- 嘴裡輕輕叼著黑色髮圈\n- 側身讓頭髮自然垂落\n\n姿勢要求：\n自然、放鬆、生活感，不要刻意擺拍，不要色情姿勢。"
       },
       {
         "id": "pose-sleeping",
@@ -551,7 +572,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 熟睡俯臥\r\n\r\n適用深夜臥室場景的睡眠姿勢。\r\n\r\n---\r\n\r\n【動作 Pose】\r\n\r\n深夜中的安靜睡眠場景。\r\n\r\n角色已經熟睡，側躺偏俯臥在柔軟的大床上，安穩抱著枕頭睡著。\r\n\r\n【IMPORTANT BODY ANATOMY】\r\n\r\nnatural asymmetrical sleeping pose, natural pelvic rotation, correct hip alignment, physically plausible sleeping posture, natural limb positioning, no disconnected limbs, smooth glute-to-thigh transition, the hips remain naturally grounded into the mattress, soft weight compression around the pelvis and upper thighs.\r\n\r\ntorso resting naturally on the mattress, upper body gently sinking into the soft bed, natural body weight compression on the chest, abdomen, and hips.\r\n\r\nright knee bent forward naturally toward the chest, forming a relaxed sleeping posture.\r\nleft leg naturally extending from the pelvis along the mattress, subtle natural bend in the knee.\r\n\r\n頭自然側向枕頭熟睡，雙手放鬆抱著柔軟大枕頭。\r\n\r\n雙腿呈現真實睡眠中的自然前後差，不要對稱、不要刻意交叉、不要性感擺拍。\r\n\r\n長直紫髮自然凌亂散落在枕頭與床單上。\r\n棉被與床單因身體重量產生自然皺褶與壓痕。\r\n\r\n整體重點是：自然、放鬆、真實人體受力、像真正熟睡中的姿勢。\r\n整體是「安靜看著她熟睡」的電影鏡頭感，不要任何刻意誘惑感。"
+        "prompt": "# 熟睡俯臥\r\n\r\n適用深夜臥室場景的睡眠姿勢。\r\n\r\n---\r\n\r\n【動作 Pose】\r\n\r\n深夜中的安靜睡眠場景。\r\n\r\n角色已經熟睡，側躺偏俯臥在柔軟的大床上，安穩抱著枕頭睡著。\r\n\r\n【IMPORTANT BODY ANATOMY】\r\n\r\nnatural asymmetrical sleeping pose, natural pelvic rotation, correct hip alignment, physically plausible sleeping posture, natural limb positioning, no disconnected limbs, smooth glute-to-thigh transition, the hips remain naturally grounded into the mattress, soft weight compression around the pelvis and upper thighs.\r\n\r\ntorso resting naturally on the mattress, upper body gently sinking into the soft bed, natural body weight compression on the chest, abdomen, and hips.\r\n\r\nright knee bent forward naturally toward the chest, forming a relaxed sleeping posture.\r\nleft leg naturally extending from the pelvis along the mattress, subtle natural bend in the knee.\r\n\r\n頭自然側向枕頭熟睡，雙手放鬆抱著柔軟大枕頭。\r\n\r\n雙腿呈現真實睡眠中的自然前後差，不要對稱、不要刻意交叉、不要性感擺拍。\r\n\r\n頭髮自然凌亂散落在枕頭與床單上。\r\n棉被與床單因身體重量產生自然皺褶與壓痕。\r\n\r\n整體重點是：自然、放鬆、真實人體受力、像真正熟睡中的姿勢。\r\n整體是「安靜看著她熟睡」的電影鏡頭感，不要任何刻意誘惑感。"
       },
       {
         "id": "pose-kagura-dance",
@@ -589,13 +610,12 @@
         "tags": [
           "indoor",
           "minimalist",
-          "morning",
           "homey"
         ],
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# MUJI 日式公寓\r\n\r\n極簡居家場景，適用黑長直學姐的居家系列。\r\n\r\n---\r\n\r\n【場景 Environment】\r\n\r\nMinimalist MUJI-style Japanese apartment interior.\r\n\r\n場景設定：\r\n極簡乾淨日式公寓、自然木質家具、米白色沙發、淺木地板、白色薄紗窗簾、晨間陽光、咖啡杯、書本、綠色植物。\r\n\r\n空間氛圍：\r\n安靜、舒適、透明、高級、生活感、日系電影感。\r\n\r\n畫面不可雜亂，不要出現過多物件。"
+        "prompt": "# MUJI 日式公寓\n\n---\n\n【場景 Environment】\n\nMinimalist MUJI-style Japanese apartment interior.\n\n場景設定：\n極簡乾淨日式公寓、自然木質家具、米白色沙發、淺木地板、白色薄紗窗簾、咖啡杯、書本、綠色植物。\n\n空間氛圍：\n安靜、舒適、透明、高級、生活感、日系電影感。\n\n畫面不可雜亂，不要出現過多物件。"
       },
       {
         "id": "scene-ferris-wheel-night",
@@ -610,7 +630,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 摩天輪夜景\r\n\r\n夜晚摩天輪車廂場景，適用紫髮少女約會系列。\r\n\r\n---\r\n\r\n【場景 Environment】\r\n\r\n夜晚巨大摩天輪車廂內。\r\n\r\n車廂設定：\r\n車廂位於高空，窗外可見東京系都市夜景、河岸燈海、遠方高樓、深藍夜空、薄雲、星光與月光。\r\n玻璃窗反射城市霓虹、車廂暖光與角色長髮。\r\n車廂內是柔和暖色燈光，與窗外冷色夜景形成浪漫對比。\r\n空氣中有細微光粒、星塵感與夢幻散景。\r\n\r\n背景要求：\r\n背景夜景需要非常美，但不能搶走人物主體。\r\n呈現東京系都市燈海、河岸反射光、遠方高樓群、星空、柔和雲層、摩天輪外部燈光、玻璃窗上的細微反射。\r\n背景細節要有深度與距離感，遠景有柔和景深，近景窗框與車廂內部有高級質感，但不要太暗。\r\n\r\n【構圖特別說明（搭配 16:9 母版）】\r\n\r\n人物位於畫面中間偏右，靠近右側三分之一位置。\r\n角色約佔畫面高度 75%–85%。\r\n鏡頭是近距離戀愛視角，中低腰部視角，像坐在她正前方的位置。\r\n左側與後方保留摩天輪窗景、城市燈海、夜空與柔和散景。"
+        "prompt": "# 摩天輪夜景\n\n---\n\n【場景 Environment】\n\n夜晚巨大摩天輪車廂內。\n\n車廂設定：\n車廂位於高空，窗外可見都市夜景、河岸燈海、遠方高樓、深藍夜空、薄雲與月光。\n玻璃窗反射城市霓虹與車廂內部。\n車廂內有柔和暖色燈光，窗外為冷色夜景。\n\n背景要求：\n背景夜景需要非常美，但不能搶走人物主體。\n呈現都市燈海、河岸反射光、遠方高樓群、柔和雲層、摩天輪外部燈光與玻璃窗細微反射。\n背景細節要有深度與距離感，遠景柔和景深，近景窗框與車廂內部高級質感。\n\n空間氛圍：\n浪漫、夢幻、夜晚約會感、電影感。"
       },
       {
         "id": "scene-classroom",
@@ -618,13 +638,12 @@
         "tags": [
           "school",
           "classroom",
-          "afternoon",
           "sunlight"
         ],
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 日本教室（靠窗座位）\r\n\r\n午後陽光灑落的校園教室，適用校園系列。\r\n\r\n---\r\n\r\n【場景 Environment】\r\n\r\n日本教室，午後陽光，靠窗座位。\r\n\r\n場景設定：\r\n柔和逆光、白色窗簾被微風吹起、木質課桌椅反射溫暖光線。\r\n窗外有明亮藍天與綠意，空氣中有細微塵埃與光粒。\r\n整體帶有安靜、清澈、青春感與淡淡懷舊感。\r\n\r\n光影：\r\n光線從左側窗戶照入，形成柔和輪廓光、髮絲高光、衣物邊緣光與溫暖高光。\r\n午後陽光灑在木質課桌、窗框、窗簾與人物肩膀、頭髮、臉頰上。\r\n窗外綠意的微弱反射、木質桌椅的暖色反射、窗簾透光的柔白亮度。\r\n前景桌面、角色椅背與人物之間有自然遮擋關係與接觸陰影。\r\n\r\n【構圖特別說明（搭配 16:9 母版）】\r\n\r\n視角：「坐在她後方座位的人視角」。\r\n鏡頭位於她後方稍偏右，高度接近後座坐姿眼睛高度。\r\n前景下方有自己的木質課桌橫向擋住畫面下緣，形成隔桌看前座的視角感。\r\n自己的桌面遮住女主角大部分大腿，但桌緣以下或兩側仍可見一部分大腿與裙擺。\r\n\r\n女主角位於畫面中央偏左，靠窗位置。\r\n遠景：教室空間往後方延伸，其他課桌椅、黑板或窗戶在右側背景柔化呈現。"
+        "prompt": "# 日本教室（靠窗座位）\n\n---\n\n【場景 Environment】\n\n日本教室，靠窗座位。\n\n場景設定：\n木質課桌椅、左側大片窗戶、白色窗簾、窗外有藍天與綠意。\n\n空間層次：\n前景桌面與椅背、人物位置靠窗、遠景教室空間與其他座位柔化呈現。\n\n空間氛圍：\n安靜、清澈、青春感、淡淡懷舊感。"
       },
       {
         "id": "scene-bedroom-night",
@@ -638,7 +657,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 深夜臥室\r\n\r\n高級日系臥室深夜場景，適用睡眠系列。\r\n\r\n---\r\n\r\n【場景 Environment】\r\n\r\n高級日系臥室，深夜安靜氣氛。\r\n\r\n房間設定：\r\n暖色床頭燈微微照亮房間，整體保持乾淨、高級、安靜、舒服的日本電影氛圍。\r\n\r\n光影：\r\n- 暖橘色床頭燈\r\n- 微弱冷藍月光\r\n- 柔和深夜陰影\r\n- 細膩空氣感\r\n- 柔焦電影感\r\n- 棉被柔軟陰影\r\n- 床單細膩皺褶\r\n- 空氣中的微弱灰塵反光\r\n- 微弱窗外城市夜景光\r\n\r\n色彩：\r\n淡紫色、暖橘色、深藍夜色、柔和白光為主。\r\n\r\n【構圖特別說明（搭配 16:9 母版）】\r\n\r\n床頭位於畫面右側，角色頭部朝向床頭。\r\n鏡頭位於床尾偏低的位置，使用低角度沉浸式電影鏡頭。\r\n視角像是靜靜坐在床尾，安靜看著她熟睡。\r\n角色身體從床尾方向一路延伸至畫面深處。"
+        "prompt": "# 深夜臥室\n\n---\n\n【場景 Environment】\n\n高級日系臥室，深夜安靜氣氛。\n\n房間設定：\n大床、柔軟棉被與床單、暖色床頭燈、窗外有微弱城市夜景。\n整體保持乾淨、高級、安靜、舒適的日本電影氛圍。\n\n空間氛圍：\n安靜、溫暖、私密、深夜感。"
       },
       {
         "id": "scene-urban-shrine",
@@ -652,7 +671,7 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 都市神社（大型廣場）\r\n\r\n大型都市神社寬闊境內廣場，適用巫女服系列。\r\n\r\n---\r\n\r\n【場景 Environment】\r\n\r\n大型都市神社的寬闊境內廣場。\r\n\r\n整體空間開闊、明亮、有尺度感，不是狹小山林神社，也不是小庭院神社。\r\n\r\n空間層次：\r\n- 前景：角色與神樂舞動作\r\n- 中景：大片空曠石板廣場、柔和樹影與少量石燈籠\r\n- 背景：遠處的大型木造拜殿（規模宏大，有寬大的屋頂、粗壯木柱、朱紅與深木色結構）\r\n- 遠景：朱紅色鳥居、樹冠與明亮天空（鳥居放在更遠的廣場入口或畫面側後方）\r\n\r\n時間與光線：\r\n清晨或午後，陽光從側後方照入，形成柔和輪廓光、髮絲高光、衣物邊緣光、光斑與空氣中漂浮的細微塵埃。\r\n\r\n環境光影響：\r\n朱紅色鳥居與木造建築的暖色反射光輕微映在白色服裝與皮膚暗部；樹影在衣袖與裙上形成柔和斑駁陰影；角色腳下有自然接觸陰影。"
+        "prompt": "# 都市神社（大型廣場）\n\n---\n\n【場景 Environment】\n\n大型都市神社的寬闊境內廣場。\n\n整體空間開闊、明亮、有尺度感，不是狹小山林神社，也不是小庭院神社。\n\n空間層次：\n- 前景：角色與動作區域\n- 中景：大片空曠石板廣場、少量石燈籠\n- 背景：大型木造拜殿（寬大屋頂、粗壯木柱、朱紅與深木色結構）\n- 遠景：朱紅色鳥居、樹冠與明亮天空\n\n空間氛圍：\n開闊、莊嚴、清澈、傳統日本神社感。"
       },
       {
         "id": "scene-rainy-street",
@@ -667,10 +686,40 @@
         "variants": [],
         "options": null,
         "prompt_template": null,
-        "prompt": "# 雨天都市街道\r\n\r\n大雨天的日本住宅街，適用都市系列。\r\n\r\n---\r\n\r\n【場景 Environment】\r\n\r\n乾淨整齊的日本都市住宅街。\r\n\r\n街道設定：\r\n街道安靜、整潔、有秩序，沒有擁擠人群、沒有雜亂招牌、沒有過多車輛、沒有堆積雜物。\r\n道路兩側是簡潔的日式住宅、低矮圍牆、少量整齊路樹、少量路燈與遠方模糊的都市街景。\r\n整體街景要有留白與空間感，不要資訊過載。\r\n\r\n天氣：\r\n白天的大雨天，天空被厚重雨雲覆蓋，整體天色偏昏暗灰藍。\r\n空氣濕冷、帶有雨霧與水氣。\r\n柏油路面被大雨完全打濕，形成清楚的濕亮質感、積水、水花與柔和倒影。\r\n\r\n氛圍：\r\n清澈的雨幕、乾淨的街景、潮濕的空氣感、路面反光，以及角色撐著透明雨傘在雨中安靜行走的電影感。\r\n\r\n【構圖特別說明（搭配 16:9 母版）】\r\n\r\n鏡頭位置約在人物腰部到胸口高度之間，像站在雨中街道左側偏前方拍攝。\r\n角色位於畫面左側三分之一處，靠近前景，人物約佔畫面高度 55% 到 70%。\r\n街道透視明確往「畫面右後方」延伸，消失點位於畫面右半部遠處。\r\n前景：角色與透明雨傘；中景：濕亮柏油路面；遠景：往右後方延伸的住宅街。\r\n\r\n避免：雜亂街景、過多招牌、過多電線、擁擠人群、霓虹燈過多、廣告牌過多、建築過度密集。"
+        "prompt": "# 雨天都市街道\n\n---\n\n【場景 Environment】\n\n乾淨整齊的日本都市住宅街，大雨天氣。\n\n街道設定：\n街道安靜、整潔、有秩序。\n道路兩側是簡潔的日式住宅、低矮圍牆、少量整齊路樹、少量路燈與遠方模糊都市街景。\n整體街景要有留白與空間感，不要資訊過載。\n\n天氣：\n天空被厚重雨雲覆蓋，整體天色偏昏暗灰藍。\n柏油路面被大雨打濕，形成濕亮質感、積水與水花。\n\n空間氛圍：\n清澈雨幕、乾淨街景、潮濕空氣感、電影感。\n\n避免：雜亂街景、過多招牌、過多電線、擁擠人群、霓虹燈過多、建築過度密集。"
       }
     ],
     "lighting": [
+      {
+        "id": "lighting-moonlight",
+        "label": "冷月光",
+        "tags": [
+          "moonlight",
+          "night",
+          "cool",
+          "blue",
+          "ambient"
+        ],
+        "variants": [],
+        "options": null,
+        "prompt_template": null,
+        "prompt": "# 冷月光\n\n---\n\n【光影 Lighting】\n\n光源性質：\n月光作為主要環境光，冷藍銀色調，光線強度低、均勻柔和，無強烈高光。\n\n光影特徵：\n冷藍銀色環境光覆蓋全身、柔和陰影偏深藍、皮膚呈現冷色透明感、髮絲有細膩銀色反光。\n\n感覺：\n安靜、夢幻、孤寂、神秘，帶有詩意與距離感。\n\n色調：\n冷藍 × 銀白 × 深藍紫，整體偏冷，飽和度略低，帶有柔和光暈感。\n\nKeywords: moonlight, cool blue ambient light, silver rim light, cold night atmosphere, low saturation, dreamy night glow, blue-tinted skin tone."
+      },
+      {
+        "id": "lighting-overcast",
+        "label": "均勻陰天光",
+        "tags": [
+          "overcast",
+          "flat",
+          "soft",
+          "neutral",
+          "diffused"
+        ],
+        "variants": [],
+        "options": null,
+        "prompt_template": null,
+        "prompt": "# 均勻陰天光\n\n---\n\n【光影 Lighting】\n\n光源性質：\n厚雲層完全覆蓋天空，陽光均勻散射，無明確方向性，形成全方位柔和漫射光。\n\n光影特徵：\n無強方向陰影、柔和細膩的立體感、皮膚色彩真實還原、無過曝高光、無強烈輪廓光。\n\n感覺：\n平靜、清冷、真實、內斂，色彩還原度高，不搶戲、適合強調人物細節。\n\n色調：\n中性偏冷，整體色調自然均衡，無強烈暖色或冷色偏移。\n\nKeywords: overcast light, flat soft lighting, diffused daylight, no harsh shadows, neutral color temperature, soft ambient light, even illumination."
+      },
       {
         "id": "lighting-night-contrast",
         "label": "夜景冷暖對比光",
@@ -688,20 +737,6 @@
         "prompt": "# 夜景冷暖對比光\n\n---\n\n【燈光畫風 Lighting & Style】\n\n光源性質：\n室內暖色光源與室外冷色夜景形成電影感冷暖對比。\n\n光影特徵：\n暖色主光打亮角色臉部與輪廓、冷藍色夜光從背景滲入、髮絲透光效果、空氣中細微光粒與散景光點。\n\n景深：\n柔和淺景深、遠景虛化夢幻光斑、前景細微散景。\n\n感覺：\n浪漫、電影感、夢幻、安靜、親密感。\n\n色調：\n暖橙 × 金色室內光 × 深藍 × 紫藍夜色，高對比但不刺眼。\n\nKeywords: warm indoor light, cool night background, cinematic warm-cool contrast, bokeh city lights, soft depth of field, volumetric glow, romantic night atmosphere."
       },
       {
-        "id": "lighting-anime-film",
-        "label": "日系動畫電影畫風",
-        "tags": [
-          "cinematic",
-          "anime",
-          "transparent",
-          "airy"
-        ],
-        "variants": [],
-        "options": null,
-        "prompt_template": null,
-        "prompt": "# 日系動畫電影畫風\n\n---\n\n【燈光畫風 Lighting & Style】\n\n畫風：\n高品質日本動畫電影視覺語言。\n手繪感動漫上色、細膩自然光渲染、柔和但立體的陰影層次。\n\n光影品質：\n清澈透明的光線表現、柔和但強烈的自然光、細膩光斑、空氣透視感、輕微鏡頭耀光、柔和膠片顆粒感。\n\n色調：\n藍紫 × 金色系柔和漸層、自然動漫色彩平衡、溫暖舒適的整體色溫。\n\nKeywords: Japanese anime film style, transparent cinematic lighting, soft natural light, airy atmosphere, hand-drawn animation quality, unified character and background rendering."
-      },
-      {
         "id": "lighting-morning-soft",
         "label": "柔和漫射逆光",
         "tags": [
@@ -715,6 +750,37 @@
         "options": null,
         "prompt_template": null,
         "prompt": "# 柔和漫射逆光\n\n---\n\n【燈光畫風 Lighting & Style】\n\n光源性質：\n柔和的自然光從角色後方或側後方透射而來，形成明亮逆光與漫射光暈。\n\n光影特徵：\n半透明空氣感、柔和逆光輪廓光、細膩皮膚散射光、柔光高光、透明感淺陰影、高明度整體亮度。\n\n感覺：\n乾淨、夢幻、柔和、透亮、不刺眼、帶有自然溫暖色溫。\n\n色調：\n暖白 × 奶油光 × 淡粉高光，整體偏高明度乾淨色調。\n\nKeywords: soft backlight, diffused natural light, airy transparency, warm white glow, high-key gentle lighting, skin scattering, soft rim light."
+      },
+      {
+        "id": "lighting-golden-hour",
+        "label": "黃金時刻暖光",
+        "tags": [
+          "golden hour",
+          "warm",
+          "backlight",
+          "sunset",
+          "outdoor"
+        ],
+        "variants": [],
+        "options": null,
+        "prompt_template": null,
+        "prompt": "# 黃金時刻暖光\n\n---\n\n【光影 Lighting】\n\n光源性質：\n低角度暖色陽光，橙金色光線從側後方或斜側方照入，帶有強烈的溫暖色調與方向感。\n\n光影特徵：\n橙金色輪廓光、髮絲透光高光、溫暖皮膚反射、柔和長陰影、暖色環境光渲染整體畫面。\n\n感覺：\n溫暖、浪漫、電影感、帶有淡淡惆悵或甜蜜感、時間感強烈。\n\n色調：\n橙 × 金 × 暖黃，整體偏暖色調，陰影偏棕橙而非冷灰。\n\nKeywords: golden hour light, warm orange sunlight, low angle backlight, rim light, warm skin tone, cinematic warm color grading."
+      }
+    ],
+    "style": [
+      {
+        "id": "style-anime-film",
+        "label": "日系動畫電影畫風",
+        "tags": [
+          "cinematic",
+          "anime",
+          "transparent",
+          "airy"
+        ],
+        "variants": [],
+        "options": null,
+        "prompt_template": null,
+        "prompt": "# 日系動畫電影畫風\n\n---\n\n【畫風 Style】\n\n畫風：\n高品質日本動畫電影視覺語言。\n手繪感動漫上色、細膩自然光渲染、柔和但立體的陰影層次。\n\n光影品質：\n清澈透明的光線表現、細膩光斑、空氣透視感、輕微鏡頭耀光、柔和膠片顆粒感。\n\n色調：\n藍紫 × 金色系柔和漸層、自然動漫色彩平衡、溫暖舒適的整體色溫。\n\nKeywords: Japanese anime film style, transparent cinematic rendering, airy atmosphere, hand-drawn animation quality, soft film grain, cinematic color grading."
       }
     ],
     "size": [
