@@ -11,6 +11,30 @@ async function init() {
   const variantSelections = {};  // moduleId → variantId string
   const optionSelections = {};   // moduleId → { axis: value }
 
+  const escapeAttr = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+  // Build <select> innerHTML for a variants array, bucketing by optional `group` into <optgroup>s.
+  // Ungrouped variants appear first; grouped ones follow in first-seen order.
+  function buildVariantOptionsHTML(variants) {
+    const groups = new Map();
+    const ungrouped = [];
+    for (const v of variants) {
+      if (v.group) {
+        if (!groups.has(v.group)) groups.set(v.group, []);
+        groups.get(v.group).push(v);
+      } else {
+        ungrouped.push(v);
+      }
+    }
+    const opt = v => `<option value="${escapeAttr(v.id)}">${escapeAttr(v.label)}</option>`;
+    let html = `<option value="">— 版本/顏色 —</option>`;
+    html += ungrouped.map(opt).join('');
+    for (const [name, vs] of groups) {
+      html += `<optgroup label="${escapeAttr(name)}">${vs.map(opt).join('')}</optgroup>`;
+    }
+    return html;
+  }
+
   // ── Render selectors ──────────────────────────────────────────────
   for (const cat of categories) {
     const items = modules[cat.id];
@@ -46,8 +70,7 @@ async function init() {
           variantSelections[item.id] = '';
           const varSel = document.createElement('select');
           varSel.className = 'variant-sel';
-          varSel.innerHTML = `<option value="">— 版本/顏色 —</option>` +
-            item.variants.map(v => `<option value="${v.id}">${v.label}</option>`).join('');
+          varSel.innerHTML = buildVariantOptionsHTML(item.variants);
           varSel.addEventListener('change', () => {
             variantSelections[item.id] = varSel.value;
             update();
@@ -111,8 +134,7 @@ async function init() {
     variantSelections[moduleId] = '';
     const sel = document.createElement('select');
     sel.className = 'variant-sel';
-    sel.innerHTML = `<option value="">— 版本/顏色 —</option>` +
-      m.variants.map(v => `<option value="${v.id}">${v.label}</option>`).join('');
+    sel.innerHTML = buildVariantOptionsHTML(m.variants);
     sel.addEventListener('change', () => {
       variantSelections[moduleId] = sel.value;
       update();
