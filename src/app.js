@@ -347,3 +347,18 @@ document.addEventListener('mouseup', () => {
   document.body.style.cursor = '';
   document.body.style.userSelect = '';
 });
+
+// ── Mobile tabs ────────────────────────────────────────────────────
+const mobileTabs = document.querySelectorAll('.mobile-tab');
+const sidebarPanel = document.getElementById('sidebar');
+const outputPanel  = document.getElementById('output');
+
+mobileTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    mobileTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = tab.dataset.target;
+    sidebarPanel.classList.toggle('mobile-hidden', target !== 'sidebar');
+    outputPanel.classList.toggle('mobile-hidden',  target !== 'output');
+  });
+});

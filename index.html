@@ -231,6 +231,58 @@
     }
     textarea:focus { border-color: var(--accent); }
     textarea::placeholder { color: var(--dim); font-style: italic; }
+
+    /* ── RWD Mobile ── */
+    #mobile-tabs { display: none; flex-shrink: 0; border-bottom: 1px solid var(--border); }
+
+    .mobile-tab {
+      flex: 1;
+      padding: 11px 0;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--dim);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color .15s, border-color .15s;
+    }
+    .mobile-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+
+      header { padding: 0 14px; height: 46px; }
+      h1 { font-size: 17px; }
+      #clear-btn { font-size: 14px; padding: 5px 10px; }
+
+      #mobile-tabs { display: flex; }
+
+      main { flex-direction: column; }
+
+      #sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 10px;
+        flex: 1;
+      }
+
+      #resizer { display: none; }
+
+      /* 選項 tab 滿版可滾動 */
+      #sidebar.mobile-hidden,
+      #output.mobile-hidden { display: none; }
+
+      /* 讓選單項目觸控更好點 */
+      .check-row { padding: 8px 8px; min-height: 44px; }
+      select { padding: 8px 28px 8px 10px; min-height: 44px; }
+      .variant-sel { padding: 7px 28px 7px 10px; min-height: 44px; }
+
+      /* 輸出區域填滿剩餘空間 */
+      #output { flex: 1; }
+      .out-section { padding: 10px 12px; }
+    }
   </style>
 </head>
 <body>
@@ -238,6 +290,10 @@
     <h1>Prompt <span>Generator</span></h1>
     <button id="clear-btn">清除全部</button>
   </header>
+  <div id="mobile-tabs">
+    <button class="mobile-tab active" data-target="sidebar">選項</button>
+    <button class="mobile-tab" data-target="output">結果</button>
+  </div>
   <main>
     <div id="sidebar"></div>
     <div id="resizer"></div>
